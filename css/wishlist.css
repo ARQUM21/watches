@@ -1,0 +1,285 @@
+
+
+/*  PAGE TITLE  */
+.wl-hero {
+  --accent: var(--gold);
+
+  padding: 3.25rem 0 3rem;
+  background: linear-gradient(135deg, var(--emerald), var(--deep-emerald));
+  border-bottom: 1px solid var(--gold-line);
+  color: var(--ivory);
+  text-align: center;
+}
+
+.wl-kicker {
+  display: inline-block;
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.wl-title {
+  margin: 0.8rem 0 0.6rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.wl-subtitle {
+  margin: 0;
+  color: rgba(248, 245, 237, 0.78);
+  font-weight: 300;
+}
+
+/*  LAYOUT  */
+.wl-section {
+  padding: 3rem 0 4.5rem;
+  background: var(--bg);
+}
+
+#wlContent[hidden],
+.wl-empty[hidden] {
+  display: none;
+}
+
+.wl-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.wl-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.wl-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.wl-toolbar-actions button {
+  cursor: pointer;
+}
+
+.wl-toolbar-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wl-toolbar-actions .is-confirm {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+/*  CARDS  */
+.wl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.25rem;
+}
+
+.wl-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.wl-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.wl-card-link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: inherit;
+}
+
+.wl-card-img {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--product-img-bg);
+}
+
+.wl-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.wl-img-missing {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.wl-img-missing[hidden] {
+  display: none;
+}
+
+.wl-card-body {
+  padding: 1.1rem 1.2rem 0.9rem;
+}
+
+.wl-card-brand {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.wl-card-name {
+  margin: 0.3rem 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.wl-card-price {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* filled heart: click to remove from the wishlist */
+.wl-remove {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  background: var(--gold);
+  border: 1px solid var(--gold-line);
+  border-radius: 50%;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.wl-remove:hover {
+  background: rgba(3, 26, 18, 0.85);
+  color: var(--gold-light);
+}
+
+.wl-card-actions {
+  padding: 0 1.2rem 1.2rem;
+}
+
+.wl-add {
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+}
+
+.wl-add:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wl-remove:focus-visible,
+.wl-card-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/*  EMPTY  */
+.wl-empty {
+  max-width: 32rem;
+  margin: 1rem auto;
+  padding: 3.5rem 1.5rem;
+  border: 1px dashed var(--line);
+  text-align: center;
+}
+
+.wl-empty i {
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 2.4rem;
+}
+
+.wl-empty h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.wl-empty p {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+
+/*  RESPONSIVE  */
+@media (max-width: 767.98px) {
+  .wl-section {
+    padding: 2rem 0 3.5rem;
+  }
+
+  .wl-toolbar-actions {
+    width: 100%;
+  }
+
+  .wl-toolbar-actions button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .wl-hero {
+    padding: 2.5rem 0 2.25rem;
+  }
+
+  .wl-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .wl-card-body {
+    padding: 0.8rem 0.8rem 0.6rem;
+  }
+
+  .wl-card-name {
+    font-size: 1rem;
+  }
+
+  .wl-card-actions {
+    padding: 0 0.8rem 0.8rem;
+  }
+
+  .wl-add {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wl-card,
+  .wl-remove {
+    transition: none;
+  }
+}

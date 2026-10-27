@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032F25">
+  <title>Our Story | Alberto Watch Company</title>
+  <meta name="description" content="Discover the Alberto Watch Company story, design philosophy, collections and perspective on modern timekeeping.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+
+<body class="about-page">
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="../index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+
+          <a href="collections.html">Collections</a>
+
+          <a href="technology.html">Technology</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="storeLocator.html">Location</a>
+          <a href="about.html">About</a>
+          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <a class="abn-icon-btn" href="collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="auth.html" data-login-link>Login / Sign up</a>
+              <a href="checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+
+        <a href="collections.html">Collections</a>
+
+        <a href="technology.html">Technology</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="storeLocator.html">Location</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="collections.html#wishlist">Wishlist</a>
+          <a href="checkout.html">Cart</a>
+          <a href="auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <main class="about-main">
+
+    <!-- 01: HERO -->
+    <section class="about-hero">
+      <div class="about-hero-image">
+        <img src="../images/about/Alberto-about.png" alt="Luxury watch from Alberto Watch Company">
+      </div>
+
+      <div class="about-hero-content">
+        <p class="about-eyebrow">OUR STORY</p>
+        <h1>About Us</h1>
+        <p>
+          Discover Alberto Watch Company, where timeless craftsmanship meets
+          modern elegance. Explore our appreciation for refined design,
+          distinctive timepieces and the art of timekeeping.
+        </p>
+        <div class="about-gold-line" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 02: OUR STORY -->
+    <section id="our-story" class="about-section about-section--light">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="about-story-frame">
+              <img class="about-story-image" loading="lazy"
+                   src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&amp;fit=crop&amp;w=1600&amp;q=90"
+                   alt="A detailed wristwatch photographed in warm light">
+            </div>
+            <p class="about-story-caption">A study in detail · The Alberto perspective</p>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="about-story-copy">
+              <div class="about-label">More Than a Measure of Time</div>
+              <h2 class="about-heading">Our Story</h2>
+              <div class="about-rule"></div>
+              <p class="about-copy">
+                At Alberto Watch Company, we believe a timepiece is more than
+                an instrument for measuring hours. It can represent personal
+                style, meaningful moments and an appreciation for thoughtful
+                design.
+              </p>
+              <p class="about-copy">
+                Our world brings together the elegance of wristwatches, the
+                character of vintage-inspired pieces, the presence of clocks
+                and the possibilities of modern timekeeping. Each collection
+                offers a different way to experience the art of time.
+              </p>
+              <p class="about-copy">
+                From understated everyday designs to distinctive statement
+                pieces, our aim is to help every visitor discover a style that
+                feels their own.
+              </p>
+              <a class="about-btn about-btn--gold mt-3" href="collections.html">Explore Our Collections</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03: PHILOSOPHY -->
+    <section class="about-section about-section--dark">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="about-label">What Guides Us</div>
+          <h2 class="about-heading">The Alberto Philosophy</h2>
+          <p class="about-copy about-narrow mx-auto">
+            Four guiding values shape how we present our collections and think
+            about the role of timepieces in everyday life.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="about-value-card">
+              <div class="about-value-index">01 / ACCURACY</div>
+              <div class="about-value-symbol" aria-hidden="true">◷</div>
+              <h3>Precision</h3>
+              <p>
+                An appreciation for accurate timekeeping, thoughtful
+                engineering and the details that help a timepiece fulfil its
+                purpose.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="about-value-card">
+              <div class="about-value-index">02 / CRAFT</div>
+              <div class="about-value-symbol" aria-hidden="true">◇</div>
+              <h3>Quality</h3>
+              <p>
+                Careful attention to design, materials, presentation and the
+                overall experience of discovering a timepiece.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="about-value-card">
+              <div class="about-value-index">03 / IDENTITY</div>
+              <div class="about-value-symbol" aria-hidden="true">✧</div>
+              <h3>Individuality</h3>
+              <p>
+                A varied selection of styles that welcomes different tastes,
+                personalities and occasions.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="about-value-card">
+              <div class="about-value-index">04 / DESIGN</div>
+              <div class="about-value-symbol" aria-hidden="true">⌁</div>
+              <h3>Timeless Design</h3>
+              <p>
+                An enduring interest in balanced proportions, distinctive
+                details and designs that remain appealing over time.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04: COLLECTIONS -->
+    <section id="about-collections" class="about-section about-section--light">
+      <div class="container">
+        <div class="row align-items-end mb-5 g-3">
+          <div class="col-lg-8">
+            <div class="about-label">Find Your Timepiece</div>
+            <h2 class="about-heading">Explore Our Collections</h2>
+            <p class="about-copy mb-0">
+              A selection of collection highlights from the wider Alberto range.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="about-btn about-btn--outline-theme" href="collections.html">View All Collections ↗</a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a class="about-collection-card" href="men.html">
+              <img src="../Images/home/men-watches.jpeg" alt="Men's watch collection" loading="lazy">
+              <div class="about-collection-body">
+                <div class="about-label">01 / WRISTWATCHES</div>
+                <h3 class="mt-2">Men's Watches</h3>
+                <p>Classic and contemporary styles with a confident presence.</p>
+                <span class="about-link">Explore collection ↗</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a class="about-collection-card" href="women.html">
+              <img src="../Images/home/women-watches.jpeg" alt="Women's watch collection" loading="lazy">
+              <div class="about-collection-body">
+                <div class="about-label">02 / WRISTWATCHES</div>
+                <h3 class="mt-2">Women's Watches</h3>
+                <p>Distinctive designs for different moods and occasions.</p>
+                <span class="about-link">Explore collection ↗</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a class="about-collection-card" href="collections.html">
+              <img src="../Images/home/luxury-watches.jpeg" alt="Luxury watch collection" loading="lazy">
+              <div class="about-collection-body">
+                <div class="about-label">03 / SIGNATURE STYLE</div>
+                <h3 class="mt-2">Luxury &amp; Vintage</h3>
+                <p>Characterful designs inspired by elegance and heritage.</p>
+                <span class="about-link">Explore collection ↗</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a class="about-collection-card" href="clocks.html">
+              <img src="../Images/home/clock.jpeg" alt="Clock collection" loading="lazy">
+              <div class="about-collection-body">
+                <div class="about-label">04 / TIME AT HOME</div>
+                <h3 class="mt-2">Clocks</h3>
+                <p>Timekeeping pieces that bring character to a space.</p>
+                <span class="about-link">Explore clocks ↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05: TECHNOLOGY -->
+    <section id="technology" class="about-section about-section--dark">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <div class="about-tech-frame">
+              <img class="about-tech-image" loading="lazy"
+                   src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&amp;fit=crop&amp;w=1600&amp;q=90"
+                   alt="Close-up of a watch dial and fine details">
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center">
+            <div class="about-tech-copy">
+              <div class="about-label">The Art &amp; Science of Time</div>
+              <h2 class="about-heading">Tradition Meets Technology.</h2>
+              <div class="about-rule"></div>
+              <p class="about-copy">
+                Timekeeping reflects a fascinating relationship between
+                engineering, function and design. From traditional mechanical
+                movements to quartz precision and connected smart features,
+                each approach brings its own character.
+              </p>
+              <ul class="about-tech-points">
+                <li><span>01</span> Mechanical &amp; automatic timepieces</li>
+                <li><span>02</span> Quartz timekeeping</li>
+                <li><span>03</span> Contemporary smart technology</li>
+                <li><span>04</span> Clocks for different spaces</li>
+              </ul>
+              <a class="about-btn about-btn--outline" href="technology.html">Discover Timekeeping</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06: BRAND PROMISE -->
+    <section class="about-promise">
+      <div class="container about-promise-content">
+        <div class="about-label">The Alberto Promise</div>
+        <h2 class="about-heading about-heading--xl mt-4">
+          Every Second Deserves<br>to Be Remarkable.
+        </h2>
+        <p class="about-copy about-narrow mx-auto mb-4">
+          Discover timepieces that bring together personal expression,
+          considered design and the enduring appeal of time.
+        </p>
+        <a class="about-btn about-btn--gold" href="collections.html">Explore the Collection</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER  -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="../index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="technology.html">Watch Technology</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="collections.html">Men's Watches</a>
+          <a href="collections.html">Women's Watches</a>
+          <a href="collections.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="auth.html">Login</a>
+          <a href="auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="../javascript/app.js"></script>
+</body>
+</html>

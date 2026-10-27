@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#031a12">
+  <meta name="description" content="Explore Alberto Watch Company's gallery of elegant watches and statement wall clocks.">
+  <title>Gallery | Alberto Watch Company</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/gallery.css">
+</head>
+
+<body class="gallery-page">
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="../index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+
+          <a href="collections.html">Collections</a>
+
+          <a href="technology.html">Technology</a>
+          <a href="gallery.html" aria-current="page">Gallery</a>
+          <a href="storeLocator.html">Location</a>
+          <a href="about.html">About</a>
+          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <a class="abn-icon-btn" href="collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="auth.html" data-login-link>Login / Sign up</a>
+              <a href="checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+
+        <a href="collections.html">Collections</a>
+
+        <a href="technology.html">Technology</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="storeLocator.html">Location</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="collections.html#wishlist">Wishlist</a>
+          <a href="checkout.html">Cart</a>
+          <a href="auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <!-- HERO -->
+  <section class="gallery-hero">
+    <div class="gallery-container gallery-hero-inner">
+      <div>
+        <div class="gallery-eyebrow">Our Gallery</div>
+        <h1>Our <em>Collection</em></h1>
+        <p>
+          Explore elegant watches and statement wall clocks, thoughtfully
+          selected to bring timeless style to every moment and space.
+        </p>
+        <div class="gallery-stats">
+          <div class="gallery-stat"><strong>48</strong><span>Designs</span></div>
+          <div class="gallery-stat"><strong>2</strong><span>Collections</span></div>
+          <div class="gallery-stat"><strong>4</strong><span>Brands</span></div>
+          <div class="gallery-stat"><strong>1</strong><span>Passion</span></div>
+        </div>
+      </div>
+      <img class="gallery-hero-art" src="../images/clockImages/images (38).jpg"
+           alt="Featured Alberto luxury watch">
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <main class="gallery-container gallery-main" id="gallery">
+
+    <section class="gallery-toolbar">
+      <div class="gallery-filters" id="filters">
+        <button type="button" class="gallery-filter active" data-cat="All">✥ All</button>
+        <button type="button" class="gallery-filter" data-cat="Wall Clock">◉ Wall Clocks</button>
+        <button type="button" class="gallery-filter" data-cat="Watch">⌚ Watches</button>
+      </div>
+
+      <div class="gallery-tools">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="name">Name A–Z</option>
+        </select>
+        <input type="search" id="search" placeholder="Search collection…" aria-label="Search collection">
+      </div>
+    </section>
+
+    <div class="gallery-result-line">
+      <span id="resultCount">Showing 1–16 of 48 pieces</span>
+      <span>Timeless design · Thoughtfully selected</span>
+    </div>
+
+    <section class="gallery-grid" id="products" aria-live="polite"></section>
+
+    <nav class="gallery-pagination" id="pages" aria-label="Gallery pagination"></nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="../index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="technology.html">Watch Technology</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="collections.html">Men's Watches</a>
+          <a href="collections.html">Women's Watches</a>
+          <a href="collections.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="auth.html">Login</a>
+          <a href="auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/gallery.js"></script>
+</body>
+</html>

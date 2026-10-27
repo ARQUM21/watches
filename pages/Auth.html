@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032F25">
+  <title>Sign In | Alberto Watch Company</title>
+  <meta name="description" content="Sign in or create your Alberto Watch Company account.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body class="auth-page">
+
+  <main class="auth-layout">
+
+    <!--LEFT: IMAGE -->
+    <section class="auth-visual">
+      <img src="../images/Signup-and-login/signup-login.jpeg"
+           alt="An Alberto timepiece"
+           onerror="this.style.display='none'">
+      <div class="auth-caption">
+        <span>Time, Refined</span>
+        <h2 id="authCaption">Every Second Tells a Story.</h2>
+      </div>
+    </section>
+
+    <!-- RIGHT: FORMS -->
+    <section class="auth-content" aria-label="Account access">
+      <a class="outline-button auth-back" href="../index.html">&larr; Back to Home</a>
+
+      <div class="auth-card">
+        <div class="auth-brand">ALBERTO</div>
+        <div class="auth-tagline">THE ART OF TIMEKEEPING</div>
+
+        <!-- Shown instead of the forms when the visitor is already signed in -->
+        <div id="authSignedIn" class="auth-signed-in" hidden>
+          <h1 class="auth-title">Welcome, <span id="authUserName"></span></h1>
+          <p class="auth-subtitle">You are already signed in.</p>
+          <div class="auth-actions">
+            <a class="gold-button" id="authContinue" href="../index.html">Continue</a>
+            <button class="outline-button" id="authSignOut" type="button">Sign Out</button>
+          </div>
+        </div>
+
+        <div id="authForms">
+          <div class="auth-tabs" role="tablist" aria-label="Choose sign in or create account">
+            <button class="auth-tab" id="tabLogin" type="button" role="tab"
+                    aria-controls="paneLogin" aria-selected="true" data-mode-switch="login">Sign In</button>
+            <button class="auth-tab" id="tabSignup" type="button" role="tab"
+                    aria-controls="paneSignup" aria-selected="false" tabindex="-1" data-mode-switch="signup">Create Account</button>
+          </div>
+
+          <!-- LOGIN -->
+          <div class="auth-pane" id="paneLogin" role="tabpanel" aria-labelledby="tabLogin"
+               data-mode="login" data-caption="Every Second Tells a Story.">
+            <h1 class="auth-title">Welcome Back</h1>
+            <p class="auth-subtitle">Sign in to continue your Alberto experience.</p>
+
+            <form id="loginForm" novalidate>
+              <div class="auth-field">
+                <label for="loginEmail">Email Address</label>
+                <input class="auth-input" id="loginEmail" name="email" type="email"
+                       autocomplete="email" placeholder="you@example.com"
+                       aria-describedby="loginEmailError">
+                <p class="auth-error" id="loginEmailError"></p>
+              </div>
+
+              <div class="auth-field">
+                <label for="loginPassword">Password</label>
+                <div class="auth-password">
+                  <input class="auth-input" id="loginPassword" name="password" type="password"
+                         autocomplete="current-password" placeholder="Enter your password"
+                         aria-describedby="loginPasswordError">
+                  <button class="auth-toggle" type="button" data-target="loginPassword" aria-pressed="false">Show</button>
+                </div>
+                <p class="auth-error" id="loginPasswordError"></p>
+              </div>
+
+              <label class="auth-check">
+                <input type="checkbox" name="remember"> Keep me signed in
+              </label>
+
+              <button class="gold-button auth-submit" type="submit">Sign In</button>
+              <p class="auth-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="auth-switch">
+              New to Alberto?
+              <button class="auth-link" type="button" data-mode-switch="signup">Create an account</button>
+            </p>
+          </div>
+
+          <!-- SIGNUP -->
+          <div class="auth-pane" id="paneSignup" role="tabpanel" aria-labelledby="tabSignup"
+               data-mode="signup" data-caption="Begin Your Timeless Journey." hidden>
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">Join us and discover the art of fine timekeeping.</p>
+
+            <form id="signupForm" novalidate>
+              <div class="auth-field">
+                <label for="signupName">Full Name</label>
+                <input class="auth-input" id="signupName" name="fullName" type="text"
+                       autocomplete="name" placeholder="Enter your full name"
+                       aria-describedby="signupNameError">
+                <p class="auth-error" id="signupNameError"></p>
+              </div>
+
+              <div class="auth-field">
+                <label for="signupEmail">Email Address</label>
+                <input class="auth-input" id="signupEmail" name="email" type="email"
+                       autocomplete="email" placeholder="you@example.com"
+                       aria-describedby="signupEmailError">
+                <p class="auth-error" id="signupEmailError"></p>
+              </div>
+
+              <div class="auth-field">
+                <label for="signupPassword">Password</label>
+                <div class="auth-password">
+                  <input class="auth-input" id="signupPassword" name="password" type="password"
+                         autocomplete="new-password" placeholder="Create a password"
+                         aria-describedby="signupPasswordError signupMeterLabel">
+                  <button class="auth-toggle" type="button" data-target="signupPassword" aria-pressed="false">Show</button>
+                </div>
+                <div class="auth-meter" id="signupMeter" data-level="0" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <p class="auth-meter-label" id="signupMeterLabel"></p>
+                <p class="auth-error" id="signupPasswordError"></p>
+              </div>
+
+              <div class="auth-field">
+                <label for="signupConfirm">Confirm Password</label>
+                <div class="auth-password">
+                  <input class="auth-input" id="signupConfirm" name="confirm" type="password"
+                         autocomplete="new-password" placeholder="Re-enter your password"
+                         aria-describedby="signupConfirmError">
+                  <button class="auth-toggle" type="button" data-target="signupConfirm" aria-pressed="false">Show</button>
+                </div>
+                <p class="auth-error" id="signupConfirmError"></p>
+              </div>
+
+              <button class="gold-button auth-submit" type="submit">Create Account</button>
+              <p class="auth-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="auth-switch">
+              Already have an account?
+              <button class="auth-link" type="button" data-mode-switch="login">Sign in</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/auth.js"></script>
+</body>
+</html>

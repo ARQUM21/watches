@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#064e3b">
+  <meta name="description" content="Discover the precision engineering, innovative movements and craftsmanship behind Alberto Watch Company timepieces.">
+  <title>Technology | Alberto Watch Company</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/technology.css">
+</head>
+
+<body class="technology-page">
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="../index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+
+          <a href="collections.html">Collections</a>
+
+          <a href="technology.html" aria-current="page">Technology</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="storeLocator.html">Location</a>
+          <a href="about.html">About</a>
+          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <a class="abn-icon-btn" href="collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="auth.html" data-login-link>Login / Sign up</a>
+              <a href="checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+
+        <a href="collections.html">Collections</a>
+
+        <a href="technology.html" aria-current="page">Technology</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="storeLocator.html">Location</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="collections.html#wishlist">Wishlist</a>
+          <a href="checkout.html">Cart</a>
+          <a href="auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <main class="tech-main">
+
+    <!-- HERO -->
+    <section class="tech-hero" aria-labelledby="techHeroTitle">
+      <div class="tech-hero-text">
+        <div class="tech-hero-content">
+          <p class="tech-eyebrow">Our Technology</p>
+          <h1 id="techHeroTitle">Precision in<br>Every Second</h1>
+          <p class="tech-hero-lead">
+            The perfect blend of tradition, innovation and engineering. Discover
+            the technology behind Alberto watches and what makes them exceptional.
+          </p>
+        </div>
+      </div>
+      <img class="tech-hero-img" src="../images/technology/technology-hero-section.jpg"
+           alt="Luxury watch showcasing precision craftsmanship">
+    </section>
+
+    <!-- ENGINEERING MEETS ART -->
+    <section class="tech-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 tech-reveal">
+            <div class="tech-img-box">
+              <img src="https://media.istockphoto.com/id/874693298/photo/watchmaker-is-repairing-the-mechanical-watches-in-his-workshop.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=AaIBxvulAIwCqLzLdE59fHm-okhgEYyrQ_cZ3SSOe_8="
+                   alt="Watchmaker repairing a mechanical watch" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-7 tech-reveal">
+            <p class="tech-small-title">The Art of Timekeeping</p>
+            <h2 class="tech-section-title">Engineering Meets Art</h2>
+            <p class="tech-section-text">
+              Every Alberto watch is a result of the perfect harmony between
+              cutting-edge engineering and centuries-old watchmaking traditions.
+              Our commitment to precision ensures that every movement, component
+              and detail works together to deliver reliability, accuracy and
+              timeless beauty.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WATCH MOVEMENTS -->
+    <section class="tech-section tech-movements" id="movements">
+      <div class="container">
+        <div class="mb-5 tech-reveal">
+          <p class="tech-small-title">Watch Movements</p>
+          <h2 class="tech-section-title">Four Movements. One Vision.</h2>
+          <p class="tech-section-text">Different movements. Same dedication to excellence.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3 tech-reveal">
+            <article class="tech-move-card">
+              <div class="tech-move-img">
+                <img src="https://images.openai.com/static-rsc-4/x_8RfhMBHiLyxpjgCn_qjI716Jx34LxlWPPd9T0Oz1LBeE9i1HNVlmgOjYRTHOsxYtJAi46UNdwfq5Zul31bHO0f0FnFX8F-2Sao_QI-3kmXrNl_xZDo1jxa6umuiRNYKAlCodzeQHGP-SzFlGoxWWxeRrH0LR7C3D5PtFDdMjKoFNi9iUKsMnBZMnV_B0Uh?purpose=fullsize" alt="Mechanical watch movement" loading="lazy">
+              </div>
+              <div class="tech-move-body">
+                <h3>Mechanical Watches</h3>
+                <p>Powered by a wound mainspring, mechanical watches are the purest form of traditional watchmaking.</p>
+                <h4>Key Characteristics</h4>
+                <ul class="tech-check-list">
+                  <li><i class="bi bi-check-lg" aria-hidden="true"></i>Hand-wound</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>No battery required</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Classic craftsmanship</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3 tech-reveal">
+            <article class="tech-move-card">
+              <div class="tech-move-img">
+                <img src="https://images.openai.com/static-rsc-4/DCPhPsYBB0YjqNW_65pYgw1dtP_sqGFgGUr1zeSarC7ZRodwTlbqEuv_Xqy80uT8lsmjEoLFYbGucImWf-2hSMZm6QARw3vwW3LlUt58f8WWX0lul9PoIIgpGqOWxKDgPMix84Tj-W_i-dcin7l0LN11vxIcexLwGPRG_pOCfI-md3rP-S7dCymA75QblOrI?purpose=fullsize" alt="Automatic watch movement" loading="lazy">
+              </div>
+              <div class="tech-move-body">
+                <h3>Automatic Watches</h3>
+                <p>Uses the motion of your wrist to wind the mainspring, combining convenience with tradition.</p>
+                <h4>Key Characteristics</h4>
+                <ul class="tech-check-list">
+                  <li><i class="bi bi-check-lg" aria-hidden="true"></i>Self-winding</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Motion powered</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Smooth and continuous</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3 tech-reveal">
+            <article class="tech-move-card">
+              <div class="tech-move-img">
+                <img src="https://images.openai.com/static-rsc-4/ayhUi-wpu2BQe1C4w3fy0GwcFAeVnb93WNv5PWH0Wx6WP2j0wgNzOXrZRWwgAx010gZP-fJri0HVTCrQPf5-eymxYDHrlD3GbzILMDvC_BhJRzU-jwzKzIsICJNIWWLQGUba2NWOzCetxbPIiSLQiMzgB8rYfbT1Fi2q9uvPEVJ1l5XJmaPubtuzAPpiHa9z?purpose=fullsize" alt="Quartz watch" loading="lazy">
+              </div>
+              <div class="tech-move-body">
+                <h3>Quartz Watches</h3>
+                <p>Powered by a battery, quartz watches use a crystal oscillator to keep time with high accuracy.</p>
+                <h4>Key Characteristics</h4>
+                <ul class="tech-check-list">
+                  <li><i class="bi bi-check-lg" aria-hidden="true"></i>High accuracy</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Low maintenance</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Battery powered</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3 tech-reveal">
+            <article class="tech-move-card">
+              <div class="tech-move-img">
+                <img src="https://zerolifestyle.co/cdn/shop/files/Envi_1.webp?v=1773448953&amp;width=400" alt="Modern smartwatch" loading="lazy">
+              </div>
+              <div class="tech-move-body">
+                <h3>Smart Watches</h3>
+                <p>Combines modern technology with features like fitness tracking and notifications.</p>
+                <h4>Key Characteristics</h4>
+                <ul class="tech-check-list">
+                  <li><i class="bi bi-check-lg" aria-hidden="true"></i>Health and fitness tracking</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Smart notifications</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Connected lifestyle</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section class="tech-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 tech-reveal">
+            <p class="tech-small-title">Inside a Watch</p>
+            <h2 class="tech-section-title">The Components</h2>
+            <p class="tech-section-text">
+              Every component plays a vital role in keeping time. The exact
+              parts vary by movement type. Here are some of the key components
+              used in mechanical and quartz timekeeping.
+            </p>
+          </div>
+          <div class="col-lg-6 tech-reveal">
+            <div class="tech-img-box">
+              <img src="https://images.unsplash.com/photo-1780277944642-657404f9581b?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D"
+                   alt="Watch gears and internal components" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+        <div class="col-6 col-md-4 col-lg tech-reveal">
+          <div class="tech-comp-box">
+            <div class="tech-icon-box"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></div>
+            <h3>Gear Train</h3>
+            <p>Transfers energy and controls motion.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg tech-reveal">
+          <div class="tech-comp-box">
+            <div class="tech-icon-box"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></div>
+            <h3>Escapement</h3>
+            <p>Regulates the flow of energy.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg tech-reveal">
+          <div class="tech-comp-box">
+            <div class="tech-icon-box"><i class="bi bi-clock-history" aria-hidden="true"></i></div>
+            <h3>Balance Wheel</h3>
+            <p>Helps maintain precise timekeeping.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg tech-reveal">
+          <div class="tech-comp-box">
+            <div class="tech-icon-box"><i class="bi bi-disc tech-icon-gold" aria-hidden="true"></i></div>
+            <h3>Mainspring</h3>
+            <p>Stores energy to power the movement.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg tech-reveal">
+          <div class="tech-comp-box">
+            <div class="tech-icon-box"><i class="bi bi-activity tech-icon-gold" aria-hidden="true"></i></div>
+            <h3>Quartz Oscillator</h3>
+            <p>Provides accurate timekeeping in quartz movements.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO WORLDS -->
+    <section class="pb-5">
+      <div class="container tech-reveal">
+        <div class="tech-two-worlds">
+          <div class="row g-0 align-items-center">
+            <div class="col-lg-8 p-4 p-md-5">
+              <p class="tech-small-title">Traditional &amp; Modern</p>
+              <h2>Two Worlds. One Passion.</h2>
+              <p class="tech-two-worlds-lead">
+                From classic mechanical artistry to cutting-edge smart
+                technology, Alberto brings together the best of both worlds.
+              </p>
+              <div class="row g-4 mt-1">
+            <div class="col-sm-6">
+              <h3>Traditional Mechanical</h3>
+              <ul class="tech-check-list">
+                <li><i class="bi bi-check-lg" aria-hidden="true"></i>Timeless craftsmanship</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>No battery required</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Built for generations</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Pure watchmaking heritage</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <h3>Modern Smartwatch</h3>
+              <ul class="tech-check-list">
+                <li><i class="bi bi-check-lg" aria-hidden="true"></i>Health and fitness tracking</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Notifications and connectivity</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Customizable watch faces</li><li><i class="bi bi-check-lg" aria-hidden="true"></i>Smart features and apps</li>
+              </ul>
+            </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="tech-watch-box">
+                <img src="https://zerolifestyle.co/cdn/shop/files/Qube_Pink-4_1.webp?v=1773019308&amp;width=400"
+                     alt="Smartwatch with modern technology" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="tech-cta">
+      <div class="container tech-reveal">
+        <p class="tech-small-title">Explore Our Collections</p>
+        <h2>Discover the Perfect Timepiece</h2>
+        <a class="tech-btn-gold" href="collections.html">
+          View Collections <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="../index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="technology.html">Watch Technology</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="collections.html">Men's Watches</a>
+          <a href="collections.html">Women's Watches</a>
+          <a href="collections.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="auth.html">Login</a>
+          <a href="auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/technology.js"></script>
+</body>
+</html>

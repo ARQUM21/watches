@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032F25">
+  <title>Support Center | Alberto Watch Company</title>
+  <meta name="description" content="Find answers about watch technology, care, warranty and repairs, and read customer reviews from Alberto Watch Company.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap">
+
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/support.css">
+</head>
+
+<body class="support-page">
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="../index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+
+          <a href="collections.html">Collections</a>
+
+          <a href="technology.html">Technology</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="storeLocator.html">Location</a>
+          <a href="about.html">About</a>
+          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <a class="abn-icon-btn" href="collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="auth.html" data-login-link>Login / Sign up</a>
+              <a href="checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+
+        <a href="collections.html">Collections</a>
+
+        <a href="technology.html">Technology</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="storeLocator.html">Location</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="collections.html#wishlist">Wishlist</a>
+          <a href="checkout.html">Cart</a>
+          <a href="auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <main class="support-main">
+
+    <!-- HERO -->
+    <section class="support-hero" id="top">
+      <div class="row g-0">
+        <div class="col-lg-6 support-hero-text">
+          <span class="support-brand-tag">ALBERTO WATCH COMPANY</span>
+          <h1>How can we help you?</h1>
+          <p>
+            Find answers to your questions about watch technology, maintenance,
+            warranties and caring for your timepiece.
+          </p>
+          <a class="support-btn support-btn--outline-gold support-btn--lg mt-2" href="#faq">
+            Explore FAQs <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-lg-6 support-hero-media">
+          <img class="support-hero-img" src="../Images/support/hero-watch.jpg" alt="Watchmaker repairing a watch">
+        </div>
+      </div>
+    </section>
+
+    <!-- HELP TOPICS -->
+    <section class="support-section" id="help">
+      <div class="container">
+        <span class="support-kicker">CUSTOMER ASSISTANCE</span>
+        <h2 class="support-title">What do you need help with?</h2>
+        <p class="support-sub mb-4">Choose a topic to find helpful information.</p>
+
+        <div class="row g-3 g-lg-4">
+          <div class="col-sm-6 col-lg-3">
+            <a class="support-help-card" data-topic="movements" href="#faq">
+              <div class="support-help-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></div>
+              <h3>Watch Technology</h3>
+              <p>Movements, mechanisms and how your watch keeps time.</p>
+              <span class="support-help-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <a class="support-help-card" data-topic="warranty" href="#faq">
+              <div class="support-help-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+              <h3>Warranty &amp; Repairs</h3>
+              <p>Coverage, service requests and repair guidance.</p>
+              <span class="support-help-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <a class="support-help-card" data-topic="care" href="#faq">
+              <div class="support-help-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
+              <h3>Watch Care</h3>
+              <p>Cleaning, storage and everyday protection tips.</p>
+              <span class="support-help-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <a class="support-help-card" href="#contact">
+              <div class="support-help-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+              <h3>Contact Support</h3>
+              <p>Talk to our team for personal assistance.</p>
+              <span class="support-help-link">Get in touch <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="support-section support-section--faq" id="faq">
+      <div class="container">
+        <span class="support-kicker">KNOWLEDGE CENTRE</span>
+        <h2 class="support-title">Frequently Asked Questions</h2>
+        <p class="support-sub mb-4">Search common questions or browse the topics below.</p>
+
+        <div class="row g-4 g-lg-5">
+          <!-- Left: search + topics -->
+          <aside class="col-lg-3">
+            <div class="support-search">
+              <i class="bi bi-search support-search-icon" aria-hidden="true"></i>
+              <input class="form-control" id="faqSearch" type="search"
+                     placeholder="Search watch care, movements, warranty..." aria-label="Search FAQs">
+              <button class="support-search-clear" id="searchClear" type="button" aria-label="Clear search">
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="support-topics-label">BROWSE TOPICS</div>
+            <div class="support-topics" id="topicList" role="tablist" aria-label="FAQ topics"></div>
+          </aside>
+
+          <!-- Right: questions -->
+          <div class="col-lg-9">
+            <div class="row g-4" id="faqPanels"></div>
+
+            <div class="support-empty" id="faqEmpty" hidden>
+              <i class="bi bi-search fs-3 d-block mb-2" aria-hidden="true"></i>
+              No questions match your search. Try a different word or
+              <a class="support-empty-link" href="#contact">contact us</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARE PROMO + CONTACT -->
+    <section class="support-section" id="contact">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-stretch">
+
+          <div class="col-lg-7">
+            <div class="support-promo">
+              <div class="support-promo-art">
+                <img class="support-promo-img"
+                     src="https://images.unsplash.com/photo-1570570026471-86415ad50a9b?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D"
+                     alt="Watch movement close-up" loading="lazy">
+              </div>
+              <div class="support-promo-body">
+                <span class="support-kicker">PRESERVE YOUR TIMEPIECE</span>
+                <h3>Care for Every Second</h3>
+                <p>
+                  Simple care habits can help protect your watch and keep it
+                  performing as intended.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Follow the care instructions for your model.</li>
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Keep the case and strap clean using suitable methods.</li>
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Avoid strong impacts and extreme temperatures.</li>
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Check water-resistance guidance before exposure.</li>
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Arrange professional servicing when recommended.</li>
+                </ul>
+                <a class="support-promo-link" data-topic="care" href="#faq">
+                  Explore Watch Care <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <span class="support-kicker">WE'RE HERE FOR YOU</span>
+            <h2 class="support-title">Still have questions?</h2>
+            <p class="support-sub">
+              Our contact page can help you find the next step for product
+              questions, service enquiries and general assistance.
+            </p>
+            <div>
+              <a class="support-btn support-btn--emerald" href="contact.html">
+                Contact Us <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section id="lcr-reviews" aria-labelledby="lcr-heading">
+      <div class="lcr-wrap">
+
+        <header class="lcr-head">
+          <div class="lcr-kicker">
+            <i class="bi bi-stars" aria-hidden="true"></i> Customer Reviews <i class="bi bi-stars" aria-hidden="true"></i>
+          </div>
+          <h2 id="lcr-heading">What Our Customers Say</h2>
+          <p class="lcr-sub">Discover customer experiences with watches and clocks.</p>
+        </header>
+
+        <!-- Watch / Clock tabs + sort -->
+        <div class="lcr-toolbar">
+          <div class="lcr-tabs">
+            <button class="lcr-tab" type="button" data-cat="watch" aria-pressed="true">
+              <i class="bi bi-watch" aria-hidden="true"></i> Watch Reviews
+            </button>
+            <button class="lcr-tab" type="button" data-cat="clock" aria-pressed="false">
+              <i class="bi bi-clock-fill" aria-hidden="true"></i> Clock Reviews
+            </button>
+          </div>
+
+          <label class="lcr-sort">Sort by:
+            <select data-sort>
+              <option value="latest">Latest</option>
+              <option value="highest">Highest rated</option>
+              <option value="helpful">Most helpful</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Average rating + distribution -->
+        <div class="lcr-summary">
+          <span class="lcr-score" data-average>0.0</span>
+          <div>
+            <div class="lcr-summary-stars" role="img" aria-label="Average customer rating">★★★★★</div>
+            <small>Average customer rating</small>
+          </div>
+          <div class="lcr-summary-details">
+            <strong data-count>0 reviews</strong><br>
+            <small data-summary>Customer feedback for watches</small>
+            <div class="lcr-breakdown" role="group" aria-label="Rating distribution">
+              <div class="lcr-break-item">5★ <span class="lcr-break-track"><span class="lcr-break-fill" data-bar="5"></span></span></div>
+              <div class="lcr-break-item">4★ <span class="lcr-break-track"><span class="lcr-break-fill" data-bar="4"></span></span></div>
+              <div class="lcr-break-item">3★ <span class="lcr-break-track"><span class="lcr-break-fill" data-bar="3"></span></span></div>
+              <div class="lcr-break-item">2★ <span class="lcr-break-track"><span class="lcr-break-fill" data-bar="2"></span></span></div>
+              <div class="lcr-break-item">1★ <span class="lcr-break-track"><span class="lcr-break-fill" data-bar="1"></span></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rating filter -->
+        <div class="lcr-filterrow" role="group" aria-label="Filter reviews by rating">
+          <span class="lcr-filter-label">Filter:</span>
+          <button class="lcr-filter" type="button" data-rating-filter="all" aria-pressed="true">All ratings</button>
+          <button class="lcr-filter" type="button" data-rating-filter="5" aria-pressed="false">★★★★★ 5</button>
+          <button class="lcr-filter" type="button" data-rating-filter="4" aria-pressed="false">★★★★ 4</button>
+          <button class="lcr-filter" type="button" data-rating-filter="3" aria-pressed="false">★★★ 3</button>
+          <button class="lcr-filter" type="button" data-rating-filter="2" aria-pressed="false">★★ 2</button>
+          <button class="lcr-filter" type="button" data-rating-filter="1" aria-pressed="false">★ 1</button>
+        </div>
+
+        <!-- Review cards -->
+        <div class="lcr-grid" data-grid aria-live="polite"></div>
+
+        <div class="lcr-nav">
+          <button class="lcr-arrow" type="button" data-prev aria-label="Previous reviews">‹</button>
+          <div class="lcr-dots" data-dots></div>
+          <button class="lcr-arrow" type="button" data-next aria-label="Next reviews">›</button>
+        </div>
+
+        <!-- Call to action -->
+        <div class="lcr-cta">
+          <h3>Share Your Experience</h3>
+          <p>Tell other customers about the watch or clock you purchased.</p>
+          <button class="lcr-action lcr-primary" type="button" data-write="watch">
+            <i class="bi bi-watch" aria-hidden="true"></i> Write a Watch Review
+          </button>
+          <button class="lcr-action" type="button" data-write="clock">
+            <i class="bi bi-clock-fill" aria-hidden="true"></i> Write a Clock Review
+          </button>
+          <p class="lcr-note">
+            Demo review content and sample photos are illustrative, not verified customer endorsements.
+            Replace them with genuine reviews before publishing. Submitted reviews are saved only in
+            this browser; a backend is needed for public, shared reviews.
+          </p>
+        </div>
+      </div>
+
+      <!-- Write-a-review popup -->
+      <div class="lcr-modal" data-modal hidden>
+        <div class="lcr-dialog" role="dialog" aria-modal="true" aria-labelledby="lcr-formtitle">
+          <div class="lcr-dialoghead">
+            <div>
+              <h3 id="lcr-formtitle">Write a review</h3>
+              <p class="lcr-hint">Share honest feedback about your product.</p>
+            </div>
+            <button class="lcr-close" type="button" data-close aria-label="Close">×</button>
+          </div>
+
+          <form class="lcr-form" data-form>
+            <div class="lcr-field">
+              <label for="lcr-cname">Your name *</label>
+              <input id="lcr-cname" name="name" maxlength="60" required>
+            </div>
+
+            <div class="lcr-field">
+              <label for="lcr-loc">City / Country</label>
+              <input id="lcr-loc" name="location" maxlength="80">
+            </div>
+
+            <div class="lcr-field">
+              <label for="lcr-cat">Review type</label>
+              <select id="lcr-cat" name="category">
+                <option value="watch">Watch</option>
+                <option value="clock">Clock</option>
+              </select>
+            </div>
+
+            <div class="lcr-field">
+              <label for="lcr-prod">Product name *</label>
+              <input id="lcr-prod" name="product" maxlength="100" placeholder="Which watch or clock?" required>
+            </div>
+
+            <div class="lcr-field lcr-wide">
+              <label>Rating *</label>
+              <div data-stars>
+                <button class="lcr-starbtn" type="button" data-star="1" aria-pressed="true" aria-label="1 star">★</button>
+                <button class="lcr-starbtn" type="button" data-star="2" aria-pressed="true" aria-label="2 stars">★</button>
+                <button class="lcr-starbtn" type="button" data-star="3" aria-pressed="true" aria-label="3 stars">★</button>
+                <button class="lcr-starbtn" type="button" data-star="4" aria-pressed="true" aria-label="4 stars">★</button>
+                <button class="lcr-starbtn" type="button" data-star="5" aria-pressed="true" aria-label="5 stars">★</button>
+              </div>
+            </div>
+
+            <div class="lcr-field lcr-wide">
+              <label for="lcr-title">Review title *</label>
+              <input id="lcr-title" name="title" maxlength="90" required>
+            </div>
+
+            <div class="lcr-field lcr-wide">
+              <label for="lcr-body">Your review *</label>
+              <textarea id="lcr-body" name="review" minlength="8" maxlength="1000" required></textarea>
+            </div>
+
+            <div class="lcr-field lcr-wide">
+              <label for="lcr-photo">Profile photo URL (optional)</label>
+              <input id="lcr-photo" name="photo" type="url" placeholder="https://...">
+              <span class="lcr-hint">Use only a photo you have permission to share.</span>
+            </div>
+
+            <div class="lcr-field lcr-wide">
+              <button class="lcr-action lcr-primary" type="submit">Submit review</button>
+              <div class="lcr-toast" data-toast role="status"></div>
+              <span class="lcr-hint">Browser-only demo: this does not publish reviews to other visitors.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER  -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="../index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="collections.html">Men's Watches</a>
+          <a href="collections.html">Women's Watches</a>
+          <a href="collections.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="men.html">Men's Watches</a>
+          <a href="women.html">Women's Watches</a>
+          <a href="clocks.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="auth.html">Login</a>
+          <a href="auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TEMPLATES -->
+
+  <!-- FAQ: left side topic button -->
+  <template id="topicButtonTemplate">
+    <button class="support-topic" type="button" role="tab">
+      <span class="support-topic-icon"><i data-topic-icon aria-hidden="true"></i></span>
+      <span data-topic-title></span>
+      <span class="support-topic-count" data-topic-count hidden></span>
+      <i class="bi bi-chevron-right support-topic-chev" aria-hidden="true"></i>
+    </button>
+  </template>
+
+  <!-- FAQ -->
+  <template id="faqGroupTemplate">
+    <div class="support-group fade-in">
+      <h3 class="support-group-title"><i data-group-icon aria-hidden="true"></i><span data-group-title></span></h3>
+      <div data-group-items></div>
+    </div>
+  </template>
+
+  <!-- FAQ: one question -->
+  <template id="faqItemTemplate">
+    <div class="support-q">
+      <button class="support-q-btn" type="button" aria-expanded="false">
+        <span class="support-q-text">
+          <i data-item-icon aria-hidden="true"></i>
+          <span data-item-question></span>
+        </span>
+        <span class="support-q-toggle" aria-hidden="true">
+          <i class="fa-solid fa-plus support-icon-plus"></i>
+          <i class="fa-solid fa-minus support-icon-minus"></i>
+        </span>
+      </button>
+      <div class="support-q-panel" hidden>
+        <div class="support-q-answer" data-item-answer></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Reviews: one card -->
+  <template id="reviewCardTemplate">
+    <article class="lcr-card">
+      <div class="lcr-category-label">
+        <span><i data-review-cat-icon aria-hidden="true"></i><span data-review-cat-text></span></span>
+        <span>ALBERTO CUSTOMER FEEDBACK</span>
+      </div>
+
+      <div class="lcr-rating" data-review-rating></div>
+      <h3 class="lcr-title" data-review-title></h3>
+      <span class="lcr-productname" data-review-product></span>
+      <p class="lcr-copy" data-review-text></p>
+
+      <div class="lcr-foot">
+        <div class="lcr-person">
+          <span class="lcr-avatarbox">
+            <img class="lcr-avatar" data-review-avatar alt="" loading="lazy">
+            <span class="lcr-avatar lcr-avatar-fallback" data-review-initial hidden></span>
+          </span>
+          <div class="lcr-personinfo">
+            <div class="lcr-name">
+              <span data-review-name></span>
+              <span class="lcr-verified" data-review-verified hidden>✓ Verified</span>
+            </div>
+            <div class="lcr-date">
+              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              <span data-review-location></span><span aria-hidden="true"> · </span><span data-review-date></span>
+            </div>
+          </div>
+        </div>
+
+        <button class="lcr-helpful" type="button" data-help aria-pressed="false" aria-label="Mark as helpful">
+          <i data-review-heart aria-hidden="true"></i> <span data-review-helpful></span>
+        </button>
+      </div>
+    </article>
+  </template>
+
+  <!-- Reviews: pagination dot + empty message -->
+  <template id="reviewDotTemplate">
+    <button class="lcr-dot" type="button"></button>
+  </template>
+
+  <template id="reviewEmptyTemplate">
+    <p class="lcr-empty">No reviews yet. Be the first to review this product category.</p>
+  </template>
+
+  <!-- Scripts -->
+
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/support.js"></script>
+</body>
+</html>

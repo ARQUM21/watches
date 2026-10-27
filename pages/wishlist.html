@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032F25">
+  <title>My Wishlist | Alberto Watch Company</title>
+  <meta name="description" content="The Alberto Watch Company timepieces you have saved to your wishlist.">
+
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/wishlist.css">
+</head>
+
+<body class="wishlist-page">
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="../index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+
+          <a href="collections.html">Collections</a>
+
+          <a href="technology.html">Technology</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="storeLocator.html">Location</a>
+          <a href="about.html">About</a>
+          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <a class="abn-icon-btn" href="collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="auth.html" data-login-link>Login / Sign up</a>
+              <a href="checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+
+        <a href="collections.html">Collections</a>
+
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="clocks.html">Clocks</a>
+        <a href="technology.html">Technology</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="storeLocator.html">Location</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="collections.html#wishlist">Wishlist</a>
+          <a href="checkout.html">Cart</a>
+          <a href="auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <main>
+
+    <!-- PAGE TITLE -->
+    <section class="wl-hero">
+      <div class="container">
+        <span class="wl-kicker">Alberto Watch Company</span>
+        <h1 class="wl-title">My Wishlist</h1>
+        <p class="wl-subtitle" id="wlSubtitle">The timepieces you have saved.</p>
+      </div>
+    </section>
+
+    <!-- SAVED WATCHES -->
+    <section class="wl-section">
+      <div class="container">
+
+        <div id="wlContent" hidden>
+          <div class="wl-toolbar">
+            <p class="wl-status" id="wlStatus" aria-live="polite"></p>
+            <div class="wl-toolbar-actions">
+              <button class="gold-button" type="button" id="wlAddAll">
+                <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> Add All to Cart
+              </button>
+              <button class="outline-button" type="button" id="wlClear">Clear Wishlist</button>
+            </div>
+          </div>
+
+          <div class="wl-grid" id="wlGrid"></div>
+        </div>
+
+        <!-- Shown when nothing is saved -->
+        <div class="wl-empty" id="wlEmpty" hidden>
+          <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          <h2>Your wishlist is empty</h2>
+          <p>Tap the heart on any watch to save it here for later.</p>
+          <a class="gold-button" href="collections.html">Browse Collections</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER  -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="../index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="technology.html">Watch Technology</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="collections.html">Men's Watches</a>
+          <a href="collections.html">Women's Watches</a>
+          <a href="collections.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="auth.html">Login</a>
+          <a href="auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TEMPLATE -->
+  <template id="wlCardTemplate">
+    <article class="wl-card">
+      <a class="wl-card-link" data-link>
+        <div class="wl-card-img">
+          <img data-image alt="" loading="lazy">
+          <span class="wl-img-missing" data-image-missing hidden>Image coming soon</span>
+        </div>
+        <div class="wl-card-body">
+          <p class="wl-card-brand" data-brand></p>
+          <h2 class="wl-card-name" data-name></h2>
+          <p class="wl-card-price" data-price></p>
+        </div>
+      </a>
+      <button class="wl-remove" type="button" data-remove>
+        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+      </button>
+      <div class="wl-card-actions">
+        <button class="gold-button wl-add" type="button" data-add>
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+          <span>Add to Cart</span>
+        </button>
+      </div>
+    </article>
+  </template>
+
+  <!-- Scripts -->
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/wishlist.js"></script>
+</body>
+</html>

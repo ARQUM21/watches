@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032F25">
+  <title>Product Details | Alberto Watch Company</title>
+  <meta name="description" content="Discover this Alberto Watch Company timepiece: details, specifications and price.">
+
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ 
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/productDetails.css">
+</head>
+
+<body class="product-page">
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="../index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+
+          <a href="collections.html">Collections</a>
+
+          <a href="technology.html">Technology</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="storeLocator.html">Location</a>
+          <a href="about.html">About</a>
+          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <a class="abn-icon-btn" href="collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="auth.html" data-login-link>Login / Sign up</a>
+              <a href="checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+
+        <a href="collections.html">Collections</a>
+
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="clocks.html">Clocks</a>
+        <a href="technology.html">Technology</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="storeLocator.html">Location</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="collections.html#wishlist">Wishlist</a>
+          <a href="checkout.html">Cart</a>
+          <a href="auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <main>
+
+    <!-- BREADCRUMB  -->
+    <nav class="pd-breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="pd-crumbs">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li id="pdCrumbCategory" hidden></li>
+          <li id="pdCrumbName" aria-current="page">Loading…</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- PRODUCT -->
+    <section class="pd-section">
+      <div class="container">
+
+        <div class="pd-grid" id="pdMain" hidden>
+
+          <!-- Image -->
+          <div class="pd-media">
+            <div class="pd-image-box">
+              <img id="pdImage" alt="">
+              <span class="pd-image-missing" id="pdImageMissing" hidden>Image coming soon</span>
+              <span class="pd-sale" id="pdSale" hidden aria-label="20 percent off">20%<br>OFF</span>
+              <span class="pd-category-badge" id="pdBadge"></span>
+            </div>
+          </div>
+
+          <!-- Details -->
+          <div class="pd-info">
+            <p class="pd-brand" id="pdBrand"></p>
+            <h1 class="pd-name" id="pdName"></h1>
+
+            <div class="pd-price-row">
+              <span class="pd-price" id="pdPrice"></span>
+              <s class="pd-old-price" id="pdOldPrice" hidden></s>
+            </div>
+
+            <p class="pd-desc" id="pdDesc"></p>
+
+            <div class="pd-specs" id="pdSpecsBox" hidden>
+              <h2 class="pd-block-title">Specifications</h2>
+              <dl class="pd-spec-list" id="pdSpecs"></dl>
+            </div>
+
+            <div class="pd-buy" id="pdBuy">
+              <div class="pd-qty">
+                <span class="pd-qty-label" id="pdQtyLabel">Quantity</span>
+                <div class="pd-qty-control" role="group" aria-labelledby="pdQtyLabel">
+                  <button class="pd-qty-btn" type="button" id="pdQtyMinus" aria-label="Decrease quantity">
+                    <i class="fa-solid fa-minus" aria-hidden="true"></i>
+                  </button>
+                  <output class="pd-qty-num" id="pdQtyNum" aria-live="polite">1</output>
+                  <button class="pd-qty-btn" type="button" id="pdQtyPlus" aria-label="Increase quantity">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <span class="pd-qty-total">Total: <strong id="pdTotal"></strong></span>
+              </div>
+
+              <div class="pd-cta">
+                <button class="gold-button pd-add" type="button" id="pdAddCart">
+                  <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                  <span>Add to Cart</span>
+                </button>
+                <button class="pd-wish" type="button" id="pdWish" aria-pressed="false" aria-label="Add to wishlist">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <ul class="pd-trust">
+              <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Genuine &amp; Authentic</li>
+              <li><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> 30-Day Returns</li>
+              <li><i class="fa-solid fa-truck" aria-hidden="true"></i> Free Shipping</li>
+              <li><i class="fa-solid fa-certificate" aria-hidden="true"></i> 2-Year Warranty</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Shown when the watch cannot be found -->
+        <div class="pd-notfound" id="pdNotFound" hidden>
+          <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+          <h1>Watch not found</h1>
+          <p>We could not find that timepiece. Please go back and choose a watch from our collections.</p>
+          <a class="gold-button" href="collections.html">Back to Collections</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="pd-related" id="pdRelated" hidden>
+      <div class="container">
+        <span class="section-label">You May Also Like</span>
+        <h2 class="pd-related-title">Related Watches</h2>
+        <div class="pd-related-grid" id="pdRelatedGrid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ADDED-TO-CART MESSAGE -->
+  <div class="pd-toast" id="pdToast" role="status" aria-live="polite" hidden>
+    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+    <span id="pdToastText"></span>
+    <a href="checkout.html">View Cart</a>
+  </div>
+
+  <!-- FOOTER  -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="../index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="technology.html">Watch Technology</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="collections.html">Men's Watches</a>
+          <a href="collections.html">Women's Watches</a>
+          <a href="collections.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="auth.html">Login</a>
+          <a href="auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TEMPLATES -->
+  <template id="pdSpecTemplate">
+    <div class="pd-spec">
+      <dt data-spec-label></dt>
+      <dd data-spec-value></dd>
+    </div>
+  </template>
+
+  <template id="pdRelatedCardTemplate">
+    <a class="pd-rel-card" data-link>
+      <div class="pd-rel-img">
+        <img data-image alt="" loading="lazy">
+        <span class="pd-image-missing" data-image-missing hidden>Image coming soon</span>
+      </div>
+      <div class="pd-rel-body">
+        <p class="pd-rel-brand" data-brand></p>
+        <h3 class="pd-rel-name" data-name></h3>
+        <p class="pd-rel-price" data-price></p>
+      </div>
+    </a>
+  </template>
+
+  <!-- Scripts  -->
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/collections-data.js"></script>
+  <script src="../javascript/productDetails.js"></script>
+</body>
+</html>

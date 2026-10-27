@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032F25">
+  <title>Alberto Watch Company | Time, Refined</title>
+  <meta name="description" content="Discover refined timepieces, distinctive design and the art of watchmaking at Alberto Watch Company.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR  -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+
+          <a href="pages/collections.html">Collections</a>
+
+          <a href="pages/technology.html">Technology</a>
+          <a href="pages/gallery.html">Gallery</a>
+          <a href="pages/storeLocator.html">Location</a>
+          <a href="pages/about.html">About</a>
+          <a href="pages/support.html">Support</a>
+          <a href="pages/contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <a class="abn-icon-btn" href="pages/collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="pages/checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="pages/auth.html" data-login-link>Login / Sign up</a>
+              <a href="pages/checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="pages/collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+
+        <a href="pages/collections.html">Collections</a>
+
+      
+        <a href="pages/technology.html">Technology</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/storeLocator.html">Location</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/support.html">Support</a>
+        <a href="pages/contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="pages/collections.html#wishlist">Wishlist</a>
+          <a href="pages/checkout.html">Cart</a>
+          <a href="pages/auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero-video-section" aria-label="Alberto Watch Company introduction">
+      <div class="hero-copy">
+        <span class="hero-kicker">A SIGNATURE OF DISTINCTION</span>
+        <h1>Time,<br>Refined.</h1>
+        <div class="gold-rule"></div>
+        <p>
+          Discover a considered expression of style, precision and
+          individuality. A world where every detail has a purpose.
+        </p>
+        <div class="hero-actions">
+          <a class="gold-button" href="pages/collections.html">
+            Explore the Collection <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a class="outline-button" href="#brandFilm">Discover Our Story</a>
+        </div>
+        <div class="hero-index">ALBERTO&nbsp;&nbsp;·&nbsp;&nbsp;TIME, REFINED</div>
+      </div>
+
+      <video class="hero-video" autoplay loop muted playsinline preload="metadata"
+             aria-label="Alberto Watch Company hero film">
+        <source src="Videos/alberto-hero.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+    </section>
+
+    <!-- BRAND FILM -->
+    <section id="brandFilm" class="brand-film section-space">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="section-label">The Alberto Film</span>
+            <h2 class="section-title">A World Beyond the Dial.</h2>
+            <div class="gold-rule"></div>
+            <p class="section-copy">
+              A timepiece is more than an instrument for measuring hours. It can
+              express character, mark a milestone and become part of a personal
+              story.
+            </p>
+            <p class="section-copy">
+              Step into the world of Alberto Watch Company and discover the
+              thinking behind our visual identity.
+            </p>
+            <a class="outline-button mt-3" href="pages/about.html">
+              The Story Behind Alberto <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="video-frame quiet-confidence-frame">
+              <img class="editorial-image quiet-confidence-image"
+                   src="images/home/brand-film.jpg"
+                   alt="A complete wristwatch photographed as a refined editorial timepiece">
+            </div>
+            <div class="video-caption">ALBERTO WATCH COMPANY&nbsp;&nbsp;·&nbsp;&nbsp;QUIET CONFIDENCE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section id="collections" class="collections-section section-space">
+      <div class="container">
+        <div class="row align-items-end mb-5">
+          <div class="col-lg-8">
+            <span class="section-label">Explore the Collections</span>
+            <h2 class="section-title">Different Styles.<br>One Sense of Time.</h2>
+          </div>
+          <div class="col-lg-4">
+            <p class="section-copy mb-0">
+              From confident everyday designs to distinctive statement pieces,
+              explore the styles that suit different moments and personalities.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <a class="collection-card" href="pages/collections.html?category=Men">
+              <img src="Images/home/men-watches.jpeg" alt="Men's watch collection" loading="lazy">
+              <div class="collection-content">
+                <span class="collection-number">COLLECTION 01</span>
+                <h3>Men's Watches</h3>
+                <p>Strong lines. Confident character.</p>
+              </div>
+              <i class="bi bi-arrow-up-right collection-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <a class="collection-card" href="pages/collections.html?category=Women">
+              <img src="Images/home/women-watches.jpeg" alt="Women's watch collection" loading="lazy">
+              <div class="collection-content">
+                <span class="collection-number">COLLECTION 02</span>
+                <h3>Women's Watches</h3>
+                <p>Graceful details. Personal expression.</p>
+              </div>
+              <i class="bi bi-arrow-up-right collection-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <a class="collection-card" href="pages/collections.html?category=Elegant">
+              <img src="Images/home/elegant-watches.jpeg" alt="Elegant watch collection" loading="lazy">
+              <div class="collection-content">
+                <span class="collection-number">COLLECTION 03</span>
+                <h3>Elegant Watches</h3>
+                <p>Refined design for meaningful occasions.</p>
+              </div>
+              <i class="bi bi-arrow-up-right collection-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <a class="collection-card" href="pages/collections.html?category=Luxury">
+              <img src="Images/home/luxury-watches.jpeg" alt="Luxury watch collection" loading="lazy">
+              <div class="collection-content">
+                <span class="collection-number">COLLECTION 04</span>
+                <h3>Luxury Watches</h3>
+                <p>Distinctive pieces for defining moments.</p>
+              </div>
+              <i class="bi bi-arrow-up-right collection-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <a class="collection-card" href="pages/collections.html?category=Vintage">
+              <img src="Images/home/vintage-watches.jpeg" alt="Vintage watch collection" loading="lazy">
+              <div class="collection-content">
+                <span class="collection-number">COLLECTION 05</span>
+                <h3>Vintage Watches</h3>
+                <p>Classic inspiration. Lasting appeal.</p>
+              </div>
+              <i class="bi bi-arrow-up-right collection-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <a class="collection-card" href="pages/collections.html?category=Smart">
+              <img src="Images/home/smart-watches.jpeg" alt="Smart watch collection" loading="lazy">
+              <div class="collection-content">
+                <span class="collection-number">COLLECTION 06</span>
+                <h3>Smart Watches</h3>
+                <p>Modern functions. Everyday connection.</p>
+              </div>
+              <i class="bi bi-arrow-up-right collection-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Clocks teaser -->
+        <div class="row align-items-center g-4 mt-5">
+          <div class="col-lg-7">
+            <div class="editorial-frame">
+              <img class="editorial-image" src="Images/home/clock.jpeg" alt="Alberto clock collection" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <span class="section-label">Beyond the Wrist</span>
+            <h2 class="section-title">Time, Beautifully Displayed.</h2>
+            <div class="gold-rule"></div>
+            <p class="section-copy">
+              Explore clocks that bring the character of considered timekeeping
+              into your home and workspace.
+            </p>
+            <a class="gold-button mt-2" href="pages/clocks.html">
+              Explore Clocks <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section id="featured" class="products-section section-space">
+      <div class="container">
+        <div class="row align-items-end mb-5">
+          <div class="col-lg-8">
+            <span class="section-label">The Signature Selection</span>
+            <h2 class="section-title">Featured Timepieces</h2>
+            <p class="section-copy mt-3 mb-0">
+              Discover distinctive designs selected for their character, style
+              and individual appeal.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a class="outline-button" href="pages/collections.html">
+              View All Collections <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div id="productStatus" class="section-copy mb-4" aria-live="polite">
+          Loading featured timepieces...
+        </div>
+
+       
+        <div id="featuredProducts" class="row g-4"></div>
+
+        <nav class="mt-5" aria-label="Featured timepieces pages">
+          <ul id="productPagination" class="pagination justify-content-center mb-0"></ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- CRAFTSMANSHIP & TECHNOLOGY -->
+    <section id="technology" class="craftsmanship-section section-space">
+      <div class="container">
+        <div class="row align-items-center g-5 mb-5">
+          <div class="col-lg-6">
+            <div class="editorial-frame">
+              <img class="editorial-image"
+                   src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+                   alt="Creative design and precision work" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <span class="section-label">The Details Matter</span>
+            <h2 class="section-title">Precision Is a Practice.</h2>
+            <div class="gold-rule"></div>
+            <p class="section-copy">
+              The appeal of a timepiece lies in its details: proportion,
+              materials, movement and the relationship between function and form.
+            </p>
+            <p class="section-copy">
+              Explore the mechanisms and technologies that have shaped
+              traditional watchmaking and contemporary design.
+            </p>
+            <a class="gold-button mt-3" href="pages/technology.html">
+              Explore the Technology <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="craft-card">
+              <i class="bi bi-gear-wide-connected" aria-hidden="true"></i>
+              <h3>Mechanical</h3>
+              <p>Discover the engineering behind traditional mechanical movements.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="craft-card">
+              <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+              <h3>Automatic</h3>
+              <p>Explore self-winding mechanisms and their enduring appeal.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="craft-card">
+              <i class="bi bi-clock" aria-hidden="true"></i>
+              <h3>Quartz</h3>
+              <p>Learn about accurate and practical everyday timekeeping.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="craft-card">
+              <i class="bi bi-cpu" aria-hidden="true"></i>
+              <h3>Smart Technology</h3>
+              <p>See how digital functions meet contemporary routines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND STORY -->
+    <section id="about" class="story-section section-space">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="editorial-frame">
+              <img class="story-image"
+                   src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+                   alt="Thoughtfully designed studio environment" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <span class="section-label">Our Philosophy</span>
+            <h2 class="section-title">Time Is Personal.</h2>
+            <div class="gold-rule"></div>
+            <p class="section-copy">
+              A timepiece can mark a beginning, celebrate a milestone or simply
+              become part of the everyday. Its meaning is often as personal as
+              the person who wears it.
+            </p>
+            <p class="section-copy">
+              Alberto's visual identity brings deep emerald, champagne gold and
+              understated design together to create a distinctive experience.
+            </p>
+            <a class="outline-button mt-3" href="pages/about.html">
+              Discover Our Story <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY PREVIEW -->
+    <section id="gallery" class="gallery-section section-space">
+      <div class="container">
+        <div class="row align-items-end mb-5">
+          <div class="col-lg-8">
+            <span class="section-label">A Closer Look</span>
+            <h2 class="section-title">The Gallery</h2>
+          </div>
+          <div class="col-lg-4">
+            <p class="section-copy mb-0">
+              Explore the visual details, styling and atmosphere surrounding the
+              world of timepieces.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-sm-6 col-lg-4">
+            <a class="gallery-tile" href="pages/gallery.html">
+              <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                   alt="Watch in a refined studio setting" loading="lazy">
+              <span>Form &amp; Proportion</span>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a class="gallery-tile" href="pages/gallery.html">
+              <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                   alt="Watch detail in close-up" loading="lazy">
+              <span>Details in Focus</span>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a class="gallery-tile" href="pages/gallery.html">
+              <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                   alt="Classic wristwatch photographed in detail" loading="lazy">
+              <span>Everyday Elegance</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a class="gold-button" href="pages/gallery.html">
+            Explore the Full Gallery <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIND YOUR TIMEPIECE (CTA) -->
+    <section id="findYourTimepiece" class="newsletter-section section-space">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="section-label">Your Next Timepiece Awaits</span>
+            <h2 class="section-title">Discover Your Signature Style.</h2>
+            <p class="section-copy mt-3 mb-0">
+              Explore a considered collection of watches and find a design that
+              feels right for your style, your moments and your everyday.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="gold-button" href="pages/collections.html">
+              Find Your Timepiece <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="outline-button mt-3" href="pages/auth.html?mode=signup">Create an Account</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="index.html">Home</a>
+          <a href="pages/about.html">About Us</a>
+          <a href="pages/gallery.html">Gallery</a>
+          <a href="pages/technology.html">Watch Technology</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="pages/collections.html">Men's Watches</a>
+          <a href="pages/collections.html">Women's Watches</a>
+          <a href="pages/collections.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="pages/auth.html">Login</a>
+          <a href="pages/auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TEMPLATES -->
+  <template id="productCardTemplate">
+    <div class="col-sm-6 col-lg-3">
+      <article class="product-card">
+        <div class="product-image-area">
+          <span class="edition-label">SPECIAL EDITION</span>
+          <img data-product-image alt="" loading="lazy">
+          <div class="text-center p-4" data-product-placeholder hidden>Image coming soon</div>
+        </div>
+        <div class="product-content">
+          <span class="product-category" data-product-category></span>
+          <h3 class="product-name" data-product-name></h3>
+          <p class="product-price" data-product-price></p>
+          <div class="product-actions">
+            <a class="outline-button" data-product-link href="#">
+              Discover This Timepiece
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </template>
+
+  <template id="pageItemTemplate">
+    <li class="page-item">
+      <button class="page-link" type="button"></button>
+    </li>
+  </template>
+
+  <!-- Scripts -->
+  <script src="product-data.js"></script>
+  <script src="javascript/app.js"></script>
+</body>
+</html>
