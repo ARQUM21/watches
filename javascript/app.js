@@ -11,7 +11,7 @@
 
   const DESKTOP_QUERY = "(min-width: 1281px)";   
   const PRODUCTS_PER_PAGE = 8;
-  const PRODUCT_DETAILS_URL = "pages/productDetails.html";
+  const PRODUCT_DETAILS_URL = "pages/Product-details.html";
   const CART_MAX_QTY = 10;
   const IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];   
 
@@ -507,7 +507,7 @@
 
   function initLoginPopup() {
     const inPages = /\/pages\/[^/]*$/.test(location.pathname);
-    const authPage = (inPages ? "" : "pages/") + "auth.html";
+    const authPage = (inPages ? "" : "pages/") + "Auth.html";
 
     const backTo = inPages
       ? "&redirect=" + encodeURIComponent((currentPage + location.search).replace(/\+/g, "%20"))
