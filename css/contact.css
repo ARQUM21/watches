@@ -1,6 +1,3 @@
-
-
-
 .contact-page {
   --contact-emerald: #064e3b;
   --contact-deep: #032f27;
@@ -12,7 +9,47 @@
   --contact-ink: #18251f;
   --contact-muted: #66736c;
   --contact-line: #e4e2d8;
+
+  /* Theme colors: dark default */
+  --contact-page-bg: #0b0d0c;
+  --contact-card-bg: #191d1a;
+  --contact-ink: #f8f5ed;
+  --contact-title: #f8f5ed;
+  --contact-muted: #a9b4ae;
+  --contact-line: rgba(255, 255, 255, 0.12);
+  --contact-label: #e6e1d3;
+  --contact-eyebrow: #d4af6a;
+  --contact-input-bg: #0b0d0c;
+  --contact-input-border: rgba(255, 255, 255, 0.18);
+  --contact-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+  --contact-ok-bg: rgba(23, 107, 69, 0.2);
+  --contact-ok-border: rgba(120, 200, 150, 0.4);
+  --contact-ok-text: #8fdcae;
+  --contact-err-bg: rgba(180, 35, 24, 0.2);
+  --contact-err-border: rgba(240, 130, 120, 0.4);
+  --contact-err-text: #ffb4ab;
+}
+
+/* Light theme: original colors */
+[data-theme="light"] .contact-page,
+.contact-page.light-mode {
+  --contact-page-bg: #f8f6ef;
+  --contact-card-bg: #fffdf8;
+  --contact-ink: #18251f;
+  --contact-title: #032f27;
+  --contact-muted: #66736c;
+  --contact-line: #e4e2d8;
+  --contact-label: #263b31;
+  --contact-eyebrow: #0b6b50;
+  --contact-input-bg: #fff;
+  --contact-input-border: #d8ddd7;
   --contact-shadow: 0 15px 40px rgba(3, 47, 39, 0.09);
+  --contact-ok-bg: #eaf6ef;
+  --contact-ok-border: #b7dfc6;
+  --contact-ok-text: #176b45;
+  --contact-err-bg: #fff0ee;
+  --contact-err-border: #f0c2bc;
+  --contact-err-text: #b42318;
 }
 
 /*  BASE (only for contact sections, not navbar/footer) */
@@ -23,7 +60,7 @@
 }
 
 .contact-main {
-  background: var(--contact-cream);
+  background: var(--contact-page-bg);
   color: var(--contact-ink);
 }
 
@@ -120,7 +157,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--contact-light);
+  color: var(--contact-eyebrow);
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.76rem;
@@ -171,7 +208,7 @@
 
 .contact-intro h2 {
   margin: 12px 0;
-  color: var(--contact-deep);
+  color: var(--contact-title);
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
@@ -279,13 +316,13 @@
   padding: clamp(24px, 4vw, 40px);
   border: 1px solid var(--contact-line);
   border-radius: 16px;
-  background: var(--contact-paper);
+  background: var(--contact-card-bg);
   box-shadow: var(--contact-shadow);
 }
 
 .contact-form-card h2 {
   margin: 0 0 8px;
-  color: var(--contact-deep);
+  color: var(--contact-title);
   font-size: clamp(1.65rem, 3vw, 2.1rem);
 }
 
@@ -313,7 +350,7 @@
 }
 
 .contact-field label {
-  color: #263b31;
+  color: var(--contact-label);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -329,10 +366,10 @@
   width: 100%;
   min-width: 0;
   padding: 13px 14px;
-  border: 1px solid #d8ddd7;
+  border: 1px solid var(--contact-input-border);
   border-radius: 7px;
   outline: none;
-  background: #fff;
+  background: var(--contact-input-bg);
   color: var(--contact-ink);
   font: inherit;
   font-size: 0.92rem;
@@ -432,15 +469,15 @@
 }
 
 .contact-form-status.is-success {
-  border: 1px solid #b7dfc6;
-  background: #eaf6ef;
-  color: #176b45;
+  border: 1px solid var(--contact-ok-border);
+  background: var(--contact-ok-bg);
+  color: var(--contact-ok-text);
 }
 
 .contact-form-status.is-error {
-  border: 1px solid #f0c2bc;
-  background: #fff0ee;
-  color: #b42318;
+  border: 1px solid var(--contact-err-border);
+  background: var(--contact-err-bg);
+  color: var(--contact-err-text);
 }
 
 /* TABLET  */

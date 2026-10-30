@@ -1,20 +1,45 @@
-
-
 /*  THEME & BASE */
 .technology-page {
+  /* Brand colours (same in both themes; hero, "two worlds" and CTA stay emerald) */
   --tech-emerald-dark: #032f25;
   --tech-emerald: #064e3b;
   --tech-gold: #d4af6a;
   --tech-gold-light: #e6c878;
   --tech-cream: #f8f5ed;
+  --tech-white: #ffffff;
+
+  /* Theme colours: dark (default) */
+  --tech-page-bg: #0b0d0c;
+  --tech-alt-bg: #191d1a;
+  --tech-card-bg: #0b0d0c;
+  --tech-text: #f8f5ed;
+  --tech-muted: rgba(248, 245, 237, 0.7);
+  --tech-title: #f8f5ed;
+  --tech-accent-text: #d4af6a;
+  --tech-border: rgba(212, 175, 106, 0.28);
+  --tech-box-border: rgba(212, 175, 106, 0.28);
+  --tech-icon-line: rgba(212, 175, 106, 0.3);
+  --tech-icon-bg: rgba(212, 175, 106, 0.08);
+}
+
+/* Theme colours: light (same switch as style.css) */
+[data-theme="light"] .technology-page,
+.technology-page.light-mode {
+  --tech-page-bg: #f8f5ed;
+  --tech-alt-bg: #ffffff;
+  --tech-card-bg: #f8f5ed;
   --tech-text: #10241d;
   --tech-muted: #5d6f67;
-  --tech-white: #ffffff;
+  --tech-title: #032f25;
+  --tech-accent-text: #064e3b;
   --tech-border: #e5d9b6;
+  --tech-box-border: #e8e0c8;
+  --tech-icon-line: rgba(6, 78, 59, 0.18);
+  --tech-icon-bg: rgba(6, 78, 59, 0.06);
 }
 
 .tech-main {
-  background: var(--tech-cream);
+  background: var(--tech-page-bg);
   color: var(--tech-text);
   font-family: "DM Sans", sans-serif;
 }
@@ -38,7 +63,7 @@
 
 .tech-small-title {
   margin-bottom: 12px;
-  color: var(--tech-emerald);
+  color: var(--tech-accent-text);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -47,7 +72,7 @@
 
 .tech-section-title {
   margin-bottom: 18px;
-  color: var(--tech-emerald-dark);
+  color: var(--tech-title);
   font-size: clamp(1.8rem, 4vw, 2.7rem);
   font-weight: 700;
 }
@@ -146,7 +171,7 @@
 
 /*  WATCH MOVEMENTS  */
 .tech-movements {
-  background: var(--tech-white);
+  background: var(--tech-alt-bg);
 }
 
 .tech-move-card {
@@ -154,7 +179,7 @@
   overflow: hidden;
   border: 1px solid var(--tech-border);
   border-radius: 6px;
-  background: var(--tech-cream);
+  background: var(--tech-card-bg);
   transition: transform 0.3s ease;
 }
 
@@ -181,7 +206,7 @@
 
 .tech-move-body h3 {
   margin-bottom: 12px;
-  color: var(--tech-emerald);
+  color: var(--tech-accent-text);
   font-size: 1.2rem;
 }
 
@@ -193,7 +218,7 @@
 
 .tech-move-body h4 {
   margin-bottom: 10px;
-  color: var(--tech-emerald-dark);
+  color: var(--tech-title);
   font-family: "DM Sans", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
@@ -218,17 +243,17 @@
 
 .tech-move-body .tech-check-list i {
   margin-right: 7px;
-  color: var(--tech-emerald);
+  color: var(--tech-accent-text);
 }
 
 /*  COMPONENTS  */
 .tech-comp-box {
   height: 100%;
   padding: 28px 15px;
-  border: 1px solid #e8e0c8;
+  border: 1px solid var(--tech-box-border);
   border-top: 3px solid var(--tech-gold);
   border-radius: 8px;
-  background: var(--tech-white);
+  background: var(--tech-alt-bg);
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -244,13 +269,13 @@
   width: 78px;
   height: 78px;
   margin: 0 auto 18px;
-  border: 1px solid rgba(6, 78, 59, 0.18);
+  border: 1px solid var(--tech-icon-line);
   border-radius: 50%;
-  background: rgba(6, 78, 59, 0.06);
+  background: var(--tech-icon-bg);
 }
 
 .tech-icon-box i {
-  color: var(--tech-emerald);
+  color: var(--tech-accent-text);
   font-size: 2.2rem;
 }
 
@@ -260,7 +285,7 @@
 
 .tech-comp-box h3 {
   margin-bottom: 10px;
-  color: var(--tech-emerald-dark);
+  color: var(--tech-title);
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;

@@ -33,6 +33,7 @@
           <a href="../index.html">Home</a>
 
           <a href="collections.html">Collections</a>
+          <a href="clocks.html">Clocks</a>
 
           <a href="technology.html">Technology</a>
           <a href="gallery.html">Gallery</a>
@@ -85,6 +86,7 @@
         <a href="../index.html">Home</a>
 
         <a href="collections.html">Collections</a>
+        <a href="clocks.html">Clocks</a>
 
         <a href="technology.html">Technology</a>
         <a href="gallery.html">Gallery</a>
@@ -212,9 +214,9 @@
       <div>
         <h3 class="awc-footer-heading">Collections</h3>
         <nav class="awc-footer-links">
-          <a href="collections.html">Men's Watches</a>
-          <a href="collections.html">Women's Watches</a>
-          <a href="collections.html">Clocks</a>
+          <a href="collections.html?tab=men">Men's Watches</a>
+          <a href="collections.html?tab=women">Women's Watches</a>
+          <a href="clocks.html">Clocks</a>
         </nav>
       </div>
 
@@ -281,23 +283,46 @@
   <!-- One watch card -->
   <template id="collCardTemplate">
     <article class="coll-card">
-      <a class="coll-card-link" data-link>
-        <div class="coll-card-img">
-          <img data-image alt="" loading="lazy">
-          <span class="coll-img-missing" data-image-missing hidden>Image coming soon</span>
-          <span class="coll-sale" aria-label="20 percent off">20%<br>OFF</span>
+      <div class="coll-card-inner">
+
+        <!-- Front -->
+        <div class="coll-face coll-front">
+          <a class="coll-card-link" data-link>
+            <div class="coll-card-img">
+              <img data-image alt="" loading="lazy">
+              <span class="coll-img-missing" data-image-missing hidden>Image coming soon</span>
+              <span class="coll-sale" aria-label="20 percent off">20%<br>OFF</span>
+            </div>
+            <div class="coll-card-body">
+              <div class="coll-card-collection" data-collection></div>
+              <div class="coll-card-brand" data-brand></div>
+              <h3 class="coll-card-name" data-name></h3>
+              <p class="coll-card-desc" data-desc></p>
+              <div class="coll-card-price" data-price></div>
+            </div>
+          </a>
+          <button class="coll-wish" type="button" data-wish aria-pressed="false">
+            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          </button>
         </div>
-        <div class="coll-card-body">
-          <div class="coll-card-collection" data-collection></div>
-          <div class="coll-card-brand" data-brand></div>
-          <h3 class="coll-card-name" data-name></h3>
-          <p class="coll-card-desc" data-desc></p>
-          <div class="coll-card-price" data-price></div>
+
+        <!-- Back (only Men's / Women's cards keep this; it shows when the card flips) -->
+        <div class="coll-face coll-back" data-back>
+          <button class="coll-wish" type="button" data-wish aria-pressed="false">
+            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          </button>
+          <span class="coll-back-tag" data-back-collection></span>
+          <h3 class="coll-back-name" data-back-name></h3>
+          <p class="coll-back-brand" data-back-brand></p>
+          <p class="coll-back-desc" data-back-desc></p>
+          <div class="coll-back-price" data-back-price></div>
+          <button class="gold-button coll-back-btn" type="button" data-add-cart>
+            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> <span>Add to Cart</span>
+          </button>
+          <a class="outline-button coll-back-btn" data-link-back>View Details</a>
         </div>
-      </a>
-      <button class="coll-wish" type="button" data-wish aria-pressed="false">
-        <i class="fa-regular fa-heart" aria-hidden="true"></i>
-      </button>
+
+      </div>
     </article>
   </template>
 

@@ -4,9 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /*  Settings  */
 
-  const WISHLIST_KEY = "alberto_wishlist";  
+  const WISHLIST_KEY = "alberto_wishlist";
+  const CART_KEY = "alberto_cart";
+  const MAX_QTY = 10;
+  const FLIP_TABS = ["men", "women"];       // only these tabs get flip cards
+
   const PAGE_SIZE = 12;
-  const DETAILS_PAGE = "productDetails.html";
+  const DETAILS_PAGE = "product-details.html";
   const ASSET_BASE = "../";                 
 
   // If an image file is not found, the same name is tried with these extensions
@@ -207,7 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
               name: product.name,
               brand: product.brand,
               price: product.price,
-              image: product.image
+              image: product.image,
+              url: product.detailsUrl
             }]
       );
     },
@@ -331,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /*  Cards  */
 
-  function buildCard(product) {
+  function buildCard(product, flip) {
     const card = cloneTemplate("collCardTemplate");
     const image = $("[data-image]", card);
     const missing = $("[data-image-missing]", card);
@@ -355,9 +360,35 @@ document.addEventListener("DOMContentLoaded", function () {
       missing.hidden = false;
     }
 
-    const wishButton = $("[data-wish]", card);
-    wishButton.dataset.wish = product.id;
-    wishButton.dataset.name = product.name;
+    card.querySelectorAll("[data-wish]").forEach(function (button) {
+      button.dataset.wish = product.id;
+      button.dataset.name = product.name;
+    });
+
+    const back = $("[data-back]", card);
+
+    if (!flip) {
+      back.remove();                       // normal card: no back side
+      return card;
+    }
+
+    // Flip card: fill the back side
+    card.classList.add("is-flip");
+    $("[data-back-collection]", card).textContent = product.collectionLabel;
+    $("[data-back-name]", card).textContent = product.name;
+    $("[data-back-brand]", card).textContent = product.brand;
+    $("[data-back-desc]", card).textContent = product.desc;
+    $("[data-back-price]", card).textContent = formatPrice(product.price);
+    $("[data-link-back]", card).href = product.detailsUrl;
+    $("[data-link-back]", card).setAttribute("aria-label", "View details of " + product.name);
+
+    const addButton = $("[data-add-cart]", card);
+    addButton.dataset.addCart = product.id;
+
+    if (product.price === null) {
+      addButton.disabled = true;
+      $("span", addButton).textContent = "Price on request";
+    }
 
     return card;
   }
@@ -496,7 +527,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cards
     if (visible.length > 0) {
-      ui.grid.replaceChildren(...visible.map(buildCard));
+      const flip = FLIP_TABS.includes(panel.tab.id);
+      ui.grid.replaceChildren(...visible.map((product) => buildCard(product, flip)));
     } else {
       const empty = cloneTemplate("collEmptyTemplate");
       const message = panel.products.length === 0
@@ -633,6 +665,70 @@ document.addEventListener("DOMContentLoaded", function () {
     syncWishButtons();
 
     if (drawer.classList.contains("is-open")) renderWishDrawer();
+  });
+
+  /*  Flip cards: Add to Cart + tap to flip on touch screens  */
+
+  function addToCart(product) {
+    let cart = [];
+    try {
+      const saved = JSON.parse(localStorage.getItem(CART_KEY));
+      if (Array.isArray(saved)) cart = saved;
+    } catch { }
+
+    const line = cart.find((entry) => String(entry.id) === product.id);
+
+    if (line) {
+      const key = "quantity" in line ? "quantity" : "qty";
+      line[key] = Math.min((Number(line[key]) || 0) + 1, MAX_QTY);
+    } else {
+      cart.push({
+        id: product.id, name: product.name, brand: product.brand,
+        price: product.price, image: product.image, url: product.detailsUrl, qty: 1
+      });
+    }
+
+    try {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    } catch { }
+
+    if (typeof window.updateNavCounts === "function") window.updateNavCounts();
+    if (typeof window.openCartDrawer === "function") window.openCartDrawer();
+  }
+
+  function unflipAll(except) {
+    document.querySelectorAll(".coll-card.is-flipped").forEach(function (card) {
+      if (card !== except) card.classList.remove("is-flipped");
+    });
+  }
+
+  panelBox.addEventListener("click", function (event) {
+    const addButton = event.target.closest("[data-add-cart]");
+
+    if (addButton) {
+      const product = productsById.get(addButton.dataset.addCart);
+      if (product && product.price !== null) addToCart(product);
+      return;
+    }
+
+    // Touch screens have no hover: first tap on the front flips the card
+    const card = event.target.closest(".coll-card.is-flip");
+    if (!card || event.target.closest("[data-wish], [data-link-back]")) return;
+
+    const touchOnly = window.matchMedia("(hover: none)").matches;
+    const onFront = event.target.closest(".coll-front");
+
+    if (touchOnly && onFront && !card.classList.contains("is-flipped")) {
+      event.preventDefault();              // do not open the details page yet
+      unflipAll(card);
+      card.classList.add("is-flipped");
+    } else if (touchOnly && !onFront && !event.target.closest("button, a")) {
+      card.classList.remove("is-flipped"); // tap empty space on the back to turn it again
+    }
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".coll-card.is-flip")) unflipAll();
   });
 
   // Wishlist changed in another browser tab

@@ -1,18 +1,27 @@
+/* =========================================
+   ALBERTO WATCH COMPANY - WISHLIST PAGE
 
+   Needs (loaded before this file):
+     app.js   -> navbar, theme, nav counters, cart side panel
+
+   Shows the watches saved in localStorage ("alberto_wishlist"), the same
+   list the heart buttons on collections.html and product-details.html use.
+   "Add to Cart" saves into "alberto_cart" and opens the cart side panel.
+========================================= */
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  /*  Settings  */
+  /* ---------- Settings ---------- */
 
   const WISHLIST_KEY = "alberto_wishlist";
   const CART_KEY = "alberto_cart";
   const MAX_QTY = 10;
-  const DETAILS_PAGE = "productDetails.html";
-  const ASSET_BASE = "../";                     
+  const DETAILS_PAGE = "product-details.html";
+  const ASSET_BASE = "../";                     // this page lives in /pages
   const IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
 
-  /* Small helpers  */
+  /* ---------- Small helpers ---------- */
 
   const $ = (selector, root = document) => root.querySelector(selector);
 
@@ -27,12 +36,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const formatPrice = (price) => price === null ? "Price on request" : "$" + price.toLocaleString("en-US");
 
- 
+  // Image paths are stored relative to the site root; this page is one folder deeper.
   function assetUrl(path) {
     const url = /^(?:[a-z][a-z0-9+.-]*:|\/|\.\.\/)/i.test(path) ? path : ASSET_BASE + path;
     return url.includes("%") ? url : encodeURI(url);
   }
 
+  // Sets image.src. If the file is missing it tries other extensions, then shows "Image coming soon".
   function loadImage(image, missing, path) {
     function fail() {
       image.remove();
@@ -74,14 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function writeList(key, list) {
     try {
       localStorage.setItem(key, JSON.stringify(list));
-    } catch { }
+    } catch { /* storage unavailable */ }
 
     if (typeof window.updateNavCounts === "function") {
-      window.updateNavCounts();     
+      window.updateNavCounts();      // navbar badges (app.js)
     }
   }
 
-  /* Cart */
+  /* ---------- Cart ---------- */
 
   // Adds one of each watch to the cart (or +1 if it is already there)
   function addToCart(items) {
@@ -100,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
           brand: item.brand,
           price: item.price,
           image: item.image,
+          url: item.url,
           qty: 1
         });
       }
@@ -112,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     else location.href = "checkout.html";
   }
 
-  /*Page parts  */
+  /* ---------- Page parts ---------- */
 
   const content = $("#wlContent");
   const emptyBox = $("#wlEmpty");
@@ -122,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const clearButton = $("#wlClear");
   let clearTimer = 0;
 
-  
+  // Saved items, cleaned up so every card has the same fields
   function getItems() {
     return readList(WISHLIST_KEY)
       .filter((item) => item && item.id !== undefined)
@@ -131,7 +142,8 @@ document.addEventListener("DOMContentLoaded", function () {
         name: item.name || "Watch",
         brand: item.brand || "",
         price: toPrice(item.price),
-        image: item.image || ""
+        image: item.image || "",
+        url: item.url || ""            // set by items that have no details page (clocks)
       }));
   }
 
@@ -143,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     card.dataset.id = item.id;
 
-    link.href = DETAILS_PAGE + "?id=" + encodeURIComponent(item.id);
+    link.href = item.url || DETAILS_PAGE + "?id=" + encodeURIComponent(item.id);
     link.setAttribute("aria-label", item.name);
     $("[data-brand]", card).textContent = item.brand;
     $("[data-name]", card).textContent = item.name;
@@ -181,9 +193,9 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.replaceChildren(...items.map(buildCard));
   }
 
-  /*Events */
+  /* ---------- Events ---------- */
 
-
+  // Heart (remove) and Add to Cart on any card
   grid.addEventListener("click", function (event) {
     const card = event.target.closest("[data-id]");
     if (!card) return;
@@ -238,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key === WISHLIST_KEY) render();
   });
 
-  /*  Start */
+  /* ---------- Start ---------- */
 
   render();
 });

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032F25">
+  <title>Wall Clocks | Alberto Watch Company</title>
+  <meta name="description" content="Explore Alberto wall clocks: classic, modern, vintage and everyday designs that bring considered timekeeping into your home.">
+
+  <!-- Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Site-wide styles (navbar, footer, theme, cart drawer) first, then page styles. This file lives in /pages -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/clocks.css">
+</head>
+
+<body class="clocks-page">
+
+  <!-- NAVBAR (behaviour lives in javascript/app.js) -->
+  <div id="navbar">
+    <header class="abn-header">
+      <div class="abn-main">
+
+        <a class="abn-brand" href="../index.html" aria-label="Alberto Watch Company home">
+          <span class="abn-brand-copy">
+            <span class="abn-brand-name">ALBERTO</span>
+            <span class="abn-brand-subtitle">WATCH COMPANY</span>
+          </span>
+        </a>
+
+        <nav class="abn-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+
+          <a href="collections.html">Collections</a>
+          <a href="clocks.html">Clocks</a>
+
+          <a href="technology.html">Technology</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="storeLocator.html">Location</a>
+          <a href="about.html">About</a>
+          <a href="support.html">Support</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="abn-actions">
+          <button class="abn-icon-btn" type="button" id="abnSearchBtn" aria-label="Search" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          </button>
+
+          <a class="abn-icon-btn" href="collections.html#wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.4Z"></path></svg>
+            <span class="abn-count" id="abnWishlistCount">0</span>
+          </a>
+
+          <a class="abn-icon-btn" href="checkout.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+            <span class="abn-count" id="abnCartCount">0</span>
+          </a>
+
+          <div class="abn-account-wrap">
+            <button class="abn-icon-btn" type="button" id="abnAccountBtn" aria-label="Account" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            </button>
+            <div class="abn-account-menu">
+              <a href="auth.html" data-login-link>Login / Sign up</a>
+              <a href="account.html" data-account-link>My Account</a>
+              <a href="checkout.html">My Orders / Cart</a>
+              <a href="#" data-signout hidden>Sign Out</a>
+            </div>
+          </div>
+
+          <button class="abn-icon-btn" type="button" id="abnThemeBtn" title="Toggle theme"></button>
+        </div>
+
+        <button class="abn-burger" type="button" id="abnBurger"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="abnMobilePanel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="abn-search-panel" id="abnSearchPanel">
+        <form class="abn-search-form" action="collections.html" method="get">
+          <input type="search" name="search" id="abnSearchInput"
+                 placeholder="Search watches and collections..." aria-label="Search watches">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <nav class="abn-mobile-panel" id="abnMobilePanel" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+
+        <a href="collections.html">Collections</a>
+        <a href="clocks.html">Clocks</a>
+
+        <a href="technology.html">Technology</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="storeLocator.html">Location</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="abn-mobile-quick-actions">
+          <a href="collections.html#wishlist">Wishlist</a>
+          <a href="checkout.html">Cart</a>
+          <a href="auth.html" data-login-link>Account</a>
+          <a href="#" data-signout hidden>Sign Out</a>
+        </div>
+      </nav>
+
+      <div class="abn-overlay" id="abnOverlay"></div>
+    </header>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="ck-hero" aria-labelledby="ckHeroTitle">
+      <div class="container ck-hero-grid">
+
+        <div class="ck-hero-copy">
+          <span class="ck-kicker">Made for your moments</span>
+          <h1 class="ck-hero-title" id="ckHeroTitle">A little more<br>time <span>well spent.</span></h1>
+          <div class="gold-rule"></div>
+          <p class="ck-hero-text">
+            The right clock does more than tell time. Find a considered piece
+            that makes your walls feel like home.
+          </p>
+          <a class="gold-button" href="#products">
+            Explore the Clocks <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+          <p class="ck-hero-note">Timeless design &nbsp;·&nbsp; Everyday living</p>
+        </div>
+
+        <div class="ck-hero-visual">
+          <!-- Live clock: hands are moved by clocks.js -->
+          <svg class="ck-live-clock" viewBox="0 0 400 400" role="img" aria-label="Live local time">
+            <defs>
+              <radialGradient id="ckBezel" cx="35%" cy="28%">
+                <stop offset="0" stop-color="#F3E6C7"/>
+                <stop offset=".3" stop-color="#B99455"/>
+                <stop offset=".58" stop-color="#4A3822"/>
+                <stop offset=".78" stop-color="#D4AF6A"/>
+                <stop offset="1" stop-color="#59452A"/>
+              </radialGradient>
+              <radialGradient id="ckDial" cx="38%" cy="24%">
+                <stop offset="0" stop-color="#173A2D"/>
+                <stop offset=".62" stop-color="#0D241C"/>
+                <stop offset="1" stop-color="#08130F"/>
+              </radialGradient>
+              <linearGradient id="ckGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#F7E5B6"/>
+                <stop offset=".5" stop-color="#D4AF6A"/>
+                <stop offset="1" stop-color="#90703D"/>
+              </linearGradient>
+              <linearGradient id="ckSilver" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FFFFFF"/>
+                <stop offset=".5" stop-color="#DAD5C9"/>
+                <stop offset="1" stop-color="#928A78"/>
+              </linearGradient>
+            </defs>
+
+            <circle class="ck-case-shadow" cx="200" cy="200" r="187"/>
+            <circle cx="200" cy="200" r="183" fill="url(#ckBezel)"/>
+            <circle class="ck-bezel-line" cx="200" cy="200" r="174"/>
+            <circle cx="200" cy="200" r="164" fill="url(#ckDial)"/>
+            <circle class="ck-dial-ring" cx="200" cy="200" r="150"/>
+            <g class="ck-ticks" id="ckTicks" aria-hidden="true"></g>
+            <g class="ck-numerals" text-anchor="middle" aria-hidden="true">
+              <text x="200" y="91">12</text><text x="254" y="105">1</text>
+              <text x="294" y="145">2</text><text x="309" y="207">3</text>
+              <text x="294" y="268">4</text><text x="254" y="308">5</text>
+              <text x="200" y="323">6</text><text x="146" y="308">7</text>
+              <text x="106" y="268">8</text><text x="91" y="207">9</text>
+              <text x="106" y="145">10</text><text x="146" y="105">11</text>
+            </g>
+            <g id="ckHour"><path d="M200 211 L193 196 L193 132 Q200 119 207 132 L207 196 Z" fill="url(#ckGold)"/></g>
+            <g id="ckMinute"><path d="M200 216 L196 201 L196 91 Q200 80 204 91 L204 201 Z" fill="url(#ckSilver)"/></g>
+            <g id="ckSecond"><path d="M200 231 L198.5 210 L198.5 69 L200 57 L201.5 69 L201.5 210 Z" fill="#D4AF6A"/></g>
+            <circle class="ck-pin-ring" cx="200" cy="200" r="9"/>
+            <circle class="ck-pin" cx="200" cy="200" r="4"/>
+          </svg>
+
+          <div class="ck-hero-caption"><span>01 / The everyday edit</span><span>Designed to stay</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="ck-products" id="products" aria-labelledby="ckProductsTitle">
+      <div class="container">
+
+        <div class="ck-heading">
+          <div>
+            <span class="section-label">Find your favourite</span>
+            <h2 class="section-title" id="ckProductsTitle">Clocks for every corner</h2>
+            <p class="section-copy mt-2 mb-0">Thoughtful details. Easy to live with. Made to be looked at.</p>
+          </div>
+
+          <label class="ck-sort" for="ckSort">
+            <span>Sort by</span>
+            <select id="ckSort">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="ck-toolbar">
+          <div class="ck-filters" id="ckFilters" role="group" aria-label="Filter clocks by style"></div>
+
+          <label class="ck-search" for="ckSearch">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input id="ckSearch" type="search" placeholder="Search clocks..." autocomplete="off">
+          </label>
+        </div>
+
+        <p class="ck-count" id="ckCount" aria-live="polite"></p>
+        <p class="ck-hint">Hover over a clock to turn it around. On a phone, tap it.</p>
+
+        <div class="ck-grid" id="ckGrid"></div>
+
+        <nav class="ck-pagination" aria-label="Clock pages">
+          <ul class="pagination justify-content-center mb-0" id="ckPagination"></ul>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- STORY STRIP -->
+    <section class="ck-story">
+      <div class="container ck-story-inner">
+        <i class="bi bi-clock" aria-hidden="true"></i>
+        <div>
+          <span class="ck-kicker">A good thing takes time</span>
+          <h2>Made for the moments in between.</h2>
+        </div>
+        <a class="outline-button" href="#products">
+          Find your clock <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER  -->
+  <footer class="awc-footer">
+    <div class="awc-footer-main">
+
+      <div class="awc-footer-brand">
+        <a class="awc-footer-logo" href="../index.html">ALBERTO</a>
+        <p class="awc-footer-tagline">The Art of Time</p>
+        <p class="awc-footer-description">
+          Discover timeless elegance, exceptional craftsmanship and the art
+          of fine watchmaking with Alberto Watch Company.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Explore</h3>
+        <nav class="awc-footer-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="technology.html">Watch Technology</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Collections</h3>
+        <nav class="awc-footer-links">
+          <a href="men.html">Men's Watches</a>
+          <a href="women.html">Women's Watches</a>
+          <a href="clocks.html">Clocks</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="awc-footer-heading">Your Alberto Account</h3>
+        <nav class="awc-footer-links">
+          <a href="auth.html">Login</a>
+          <a href="auth.html?mode=signup">Create an Account</a>
+        </nav>
+        <p class="awc-footer-note">
+          <strong>Timeless Style.</strong><br>Exceptional Moments.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="awc-footer-bottom">
+      <p class="awc-footer-copyright">
+        &copy; <span id="footerYear">2026</span> Alberto Watch Company. All rights reserved.
+      </p>
+      <div class="awc-footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="auth.html">Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TEMPLATES (clocks.js copies these) -->
+  <template id="ckCardTemplate">
+    <article class="ck-card" tabindex="0">
+      <div class="ck-card-inner">
+
+        <!-- Front -->
+        <div class="ck-face ck-front">
+          <div class="ck-img">
+            <img data-image alt="" loading="lazy">
+            <span class="ck-img-missing" data-image-missing hidden>Image coming soon</span>
+            <span class="ck-tag" data-tag></span>
+          </div>
+          <div class="ck-front-body">
+            <h3 class="ck-name" data-name></h3>
+            <p class="ck-price" data-price></p>
+          </div>
+        </div>
+
+        <!-- Back -->
+        <div class="ck-face ck-back">
+          <span class="ck-back-tag" data-back-tag></span>
+          <h3 class="ck-back-name" data-back-name></h3>
+          <p class="ck-desc" data-desc></p>
+          <dl class="ck-specs">
+            <div><dt>Size</dt><dd data-size></dd></div>
+            <div><dt>Material</dt><dd data-material></dd></div>
+          </dl>
+          <p class="ck-back-price" data-back-price></p>
+          <div class="ck-actions">
+            <button class="gold-button ck-add" type="button" data-add>
+              <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+              <span>Add to Cart</span>
+            </button>
+            <button class="ck-wish" type="button" data-wish aria-pressed="false">
+              <i class="fa-regular fa-heart" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </template>
+
+  <template id="ckEmptyTemplate">
+    <div class="ck-empty">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <p>No clocks match your search.</p>
+    </div>
+  </template>
+
+  <!-- Scripts (order matters): app.js (navbar, theme, counts, cart drawer) -> clock data -> this page -->
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/clocksdata.js"></script>
+  <script src="../javascript/clocks.js"></script>
+</body>
+</html>

@@ -1,17 +1,26 @@
+/* =========================================
+   ALBERTO WATCH COMPANY - CHECKOUT / ORDER SUMMARY PAGE
 
+   Needs (loaded before this file):
+     app.js   -> navbar, theme, nav counters
+
+   Shows the items saved in localStorage ("alberto_cart"), lets the
+   visitor change quantities or remove watches, and shows the total.
+   No payment is collected (demo).
+========================================= */
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  /*  Settings */
+  /* ---------- Settings ---------- */
 
-  const CART_KEYS = ["alberto_cart", "cart"];  
+  const CART_KEYS = ["alberto_cart", "cart"];   // same keys app.js counts for the navbar badge
   const MAX_QTY = 10;
-  const DETAILS_PAGE = "productDetails.html";
-  const ASSET_BASE = "../";                     
+  const DETAILS_PAGE = "product-details.html";
+  const ASSET_BASE = "../";                     // this page lives in /pages
   const IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
 
-  /*  Small helpers  */
+  /* ---------- Small helpers ---------- */
 
   const $ = (selector, root = document) => root.querySelector(selector);
 
@@ -42,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return url.includes("%") ? url : encodeURI(url);
   }
 
-
+  // Sets image.src. If the file is missing it tries other extensions, then removes the <img>.
   function loadImage(image, path) {
     if (!path) {
       image.remove();
@@ -61,13 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
         image.src = assetUrl(base + "." + next);
       } else {
         image.removeEventListener("error", handleError);
-        image.remove();             
+        image.remove();             // the empty box stays, so the layout does not move
       }
     });
     image.src = assetUrl(path);
   }
 
-  /* Cart data */
+  /* ---------- Cart data ---------- */
 
   function readCart() {
     for (const key of CART_KEYS) {
@@ -75,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const parsed = JSON.parse(localStorage.getItem(key));
         const list = Array.isArray(parsed) ? parsed : parsed?.items;
         if (Array.isArray(list)) return { key, parsed, list };
-      } catch { }
+      } catch { /* try the next key */ }
     }
     return { key: CART_KEYS[0], parsed: null, list: [] };
   }
@@ -85,14 +94,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       localStorage.setItem(key, JSON.stringify(data));
-    } catch { }
+    } catch { /* storage unavailable */ }
 
     if (typeof window.updateNavCounts === "function") {
-      window.updateNavCounts();    
+      window.updateNavCounts();      // navbar badge (app.js)
     }
   }
 
-  /*  Page parts  */
+  /* ---------- Page parts ---------- */
 
   const layout = $("#coLayout");
   const emptyBox = $("#coEmpty");
@@ -107,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const quantity = getQty(item);
     const unitPrice = toNumber(item.price);
     const name = item.name || "Watch";
-    const detailsUrl = DETAILS_PAGE + "?id=" + encodeURIComponent(id);
+    const detailsUrl = item.url || DETAILS_PAGE + "?id=" + encodeURIComponent(id);
 
     row.dataset.id = id;
 
@@ -157,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     itemsList.replaceChildren(...list.map(buildItem));
   }
 
-  /* Events */
+  /* ---------- Events ---------- */
 
   // + / - / Remove (one listener for every row)
   itemsList.addEventListener("click", function (event) {
@@ -182,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
     render();
   });
 
-  // Clear cart
+  // "Clear cart" asks for a second click, so it cannot happen by accident
   clearButton.addEventListener("click", function () {
     if (!clearButton.classList.contains("is-confirm")) {
       clearButton.classList.add("is-confirm");
@@ -202,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     clearButton.textContent = "Clear cart";
   }
 
-  /* Confirm order + thank-you popup  */
+  /* ---------- Confirm order + thank-you popup ---------- */
 
   const modal = $("#coModal");
   const modalBox = $(".co-modal", modal);
@@ -232,11 +241,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const count = cart.list.reduce((sum, item) => sum + getQty(item), 0);
     const total = cart.list.reduce((sum, item) => sum + toNumber(item.price) * getQty(item), 0);
 
-    saveCart(cart, []);     
+    saveCart(cart, []);     // the order is done, so the cart is emptied
     render();
     openModal(count, total);
   });
 
+  // Outside click or Escape just closes the popup (the page behind shows an empty cart)
   modal.addEventListener("click", function (event) {
     if (event.target === modal) closeModal();
   });
@@ -250,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (CART_KEYS.includes(event.key)) render();
   });
 
-  /*  Start */
+  /* ---------- Start ---------- */
 
   render();
 });

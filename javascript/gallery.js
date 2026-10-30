@@ -1,12 +1,14 @@
-
 "use strict";
 
 (function () {
   /* Settings  */
 
   // Images folder relative to pages/gallery.html. Change here only.
-  const IMAGE_FOLDER = "../images/clockImages/";
+  const IMAGE_FOLDER = "../images/gallerypics/";
   const PAGE_SIZE = 16;
+
+  // Extensions tried in order, so .jpeg / .jpg / .png / .webp all work.
+  const IMAGE_EXTENSIONS = ["jpeg", "jpg", "png", "webp"];
 
   /*  Images  */
 
@@ -14,11 +16,11 @@
     Array.from({ length: to - from + 1 }, (_, i) => from + i);
 
  
-  const imagePath = (n) =>
-    IMAGE_FOLDER + (n === 0 ? "images.jpg" : "images (" + n + ").jpg");
+  const imagePath = (n) => IMAGE_FOLDER + "gallery-image" + n;
 
-  const WATCH_IMAGES = [...range(0, 17), 38].map(imagePath);
-  const CLOCK_IMAGES = range(19, 37).map(imagePath);
+  // All gallery cards use the 37 gallerypics images.
+  const WATCH_IMAGES = range(1, 37).map(imagePath);
+  const CLOCK_IMAGES = WATCH_IMAGES;
 
   /*  Product data [type, brand, title, description, price] */
 
@@ -158,7 +160,7 @@
 
     card.innerHTML =
       '<div class="gallery-photo">' +
-        '<img src="' + escapeHtml(encodeURI(product.image)) + '" alt="' + escapeHtml(product.alt) + '" loading="lazy">' +
+        '<img src="' + escapeHtml(encodeURI(product.image + "." + IMAGE_EXTENSIONS[0])) + '" alt="' + escapeHtml(product.alt) + '" loading="lazy">' +
         '<div class="gallery-placeholder">IMAGE LOADING…</div>' +
         '<span class="gallery-tag">◷ &nbsp;' + escapeHtml(product.category) + "</span>" +
       "</div>" +
@@ -175,7 +177,16 @@
       placeholder.style.display = "none";
     });
 
+    let attempt = 0;
+
     image.addEventListener("error", function () {
+      attempt += 1;
+
+      if (attempt < IMAGE_EXTENSIONS.length) {
+        image.src = encodeURI(product.image + "." + IMAGE_EXTENSIONS[attempt]);
+        return;
+      }
+
       image.remove();
       placeholder.textContent = "IMAGE NOT FOUND";
     });

@@ -1,5 +1,3 @@
-
-
 /*  HERO  */
 .coll-hero {
   position: relative;
@@ -334,6 +332,23 @@
   border-color: var(--accent);
 }
 
+.coll-card-inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.coll-front {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.coll-back {
+  display: none;
+}
+
 .coll-card-link {
   display: flex;
   flex: 1;
@@ -522,6 +537,168 @@
   margin-top: 0.5rem;
   color: var(--accent);
   font-size: 0.85rem;
+}
+
+
+/*  FLIP CARDS (Men's + Women's tabs)  */
+.coll-card.is-flip {
+  aspect-ratio: 3 / 4.4;
+  perspective: 1200px;
+  background: none;
+  border: 0;
+}
+
+.coll-card.is-flip:hover {
+  transform: none;
+}
+
+.coll-card.is-flip .coll-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* turns over on mouse hover, keyboard focus, or a tap (.is-flipped) */
+@media (hover: hover) {
+  .coll-card.is-flip:hover .coll-card-inner { transform: rotateY(180deg); }
+}
+
+.coll-card.is-flip:focus-within .coll-card-inner,
+.coll-card.is-flip.is-flipped .coll-card-inner {
+  transform: rotateY(180deg);
+}
+
+.coll-card.is-flip .coll-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.coll-card.is-flip .coll-card-link {
+  min-height: 0;
+}
+
+.coll-card.is-flip .coll-card-img {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+
+.coll-card.is-flip .coll-front .coll-card-desc {
+  display: none;                     /* the description is on the back */
+}
+
+.coll-card.is-flip .coll-card-body {
+  flex: 0 0 auto;
+}
+
+.coll-card.is-flip .coll-card-price {
+  margin-top: 0.2rem;
+}
+
+/* Back: always emerald, so keep the bright gold in light mode too */
+.coll-card.is-flip .coll-back {
+  --accent: var(--gold);
+  --accent-hover: var(--gold-light);
+
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1.4rem 1.25rem;
+  background: linear-gradient(160deg, var(--emerald), var(--deep-emerald));
+  border-color: var(--gold-line);
+  color: var(--ivory);
+  text-align: center;
+  transform: rotateY(180deg);
+  visibility: hidden;                /* its buttons cannot be tabbed to while hidden */
+  transition: visibility 0s 0.35s;
+}
+
+@media (hover: hover) {
+  .coll-card.is-flip:hover .coll-back {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
+
+.coll-card.is-flip:focus-within .coll-back,
+.coll-card.is-flip.is-flipped .coll-back {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.coll-back-tag {
+  color: var(--gold-light);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.coll-back-name {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.coll-back-brand {
+  margin: 0;
+  color: var(--gold-light);
+  font-size: 0.78rem;
+}
+
+.coll-back-desc {
+  display: -webkit-box;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  color: #e1e8e2;
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.coll-back-price {
+  margin-bottom: 0.6rem;
+  color: var(--gold);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.coll-back-btn {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.coll-back-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.coll-card.is-flip .coll-back .outline-button {
+  border-color: var(--gold-line);
+  color: var(--ivory);
+}
+
+.coll-card.is-flip .coll-back .outline-button:hover {
+  background: var(--gold);
+  color: var(--ink);
 }
 
 /*  WISHLIST DRAWER  */
@@ -764,6 +941,18 @@ body.coll-drawer-open {
     display: none;
   }
 
+  .coll-card.is-flip .coll-back {
+    padding: 0.9rem 0.7rem;
+  }
+
+  .coll-back-desc {
+    display: none;
+  }
+
+  .coll-back-name {
+    font-size: 1rem;
+  }
+
   .coll-sort {
     flex: 1;
     min-width: 0;
@@ -776,6 +965,7 @@ body.coll-drawer-open {
 
 @media (prefers-reduced-motion: reduce) {
   .coll-card,
+  .coll-card.is-flip .coll-card-inner,
   .coll-tab,
   .coll-drawer,
   .coll-drawer-overlay {
