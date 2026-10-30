@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const FLIP_TABS = ["men", "women"];       // only these tabs get flip cards
 
   const PAGE_SIZE = 12;
-  const DETAILS_PAGE = "product-details.html";
+  const DETAILS_PAGE = "Product-details.html";
   const ASSET_BASE = "../";                 
 
   // If an image file is not found, the same name is tried with these extensions
